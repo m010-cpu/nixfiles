@@ -1,0 +1,132 @@
+{ config, pkgs, ... }:
+
+{
+  programs.zsh = {
+    enable = true;
+
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+
+    shellAliases = {
+      cd = "z";
+      ls = "eza --icons=always";
+      ll = "eza -alh --icons=always";
+      tree = "eza --icons=always --tree";
+      lgit = "lazygit";
+      update = "sudo nixos-rebuild switch --flake /home/mo/nixfiles";
+    };
+    history = {
+      size = 10000;
+      extended = true;
+      ignoreAllDups = true;
+      share = true;
+    };
+
+    # plugins = [{
+    #   name = "fzf-tab";
+    #   src = pkgs.fetchFromGitHub {
+    #     owner = "Aloxaf";
+    #     repo = "fzf-tab";
+    #     rev = "c2b4aa5ad2532cca91f23908ac7f00efb7ff09c9";
+    #     sha256 = "1b4pksrc573aklk71dn2zikiymsvq19bgvamrdffpf7azpq6kxl2";
+    #   };
+    # }];
+    plugins = [
+      {
+        name = "fzf-tab";
+        src = pkgs.zsh-fzf-tab;
+        file = "/share/fzf-tab/fzf-tab.plugin.zsh";
+      }
+      {
+        name = "powerlevel10k";
+        src = pkgs.zsh-powerlevel10k;
+        file = "/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      }
+      {
+        name = "nix-shell";
+        src = pkgs.zsh-nix-shell;
+        file = "/share/zsh-nix-shell/nix-shell.plugin.zsh";
+      }
+    ];
+
+    initExtraFirst = ''
+      if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
+        source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
+      fi
+
+      [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+    '';
+
+    initExtra = ''
+
+      # _gen_fzf_default_opts() {
+      #   local base03="#002b36"
+      #   local base02="#073642"
+      #   local base01="#586e75"
+      #   local base00="#657b83"
+      #   local base0="#839496"
+      #   local base1="#93a1a1"
+      #   local base2="#eee8d5"
+      #   local base3="#fdf6e3"
+      #   local yellow="#b58900"
+      #   local orange="#cb4b16"
+      #   local red="#dc322f"
+      #   local magenta="#d33682"
+      #   local violet="#6c71c4"
+      #   local blue="#268bd2"
+      #   local cyan="#2aa198"
+      #   local green="#859900"
+      #
+      #   export FZF_DEFAULT_OPTS="
+      #     --color fg:-1,bg:-1,hl:$blue,fg+:$base2,bg+:$base02,hl+:$blue
+      #     --color info:$yellow,prompt:$yellow,pointer:$base3,marker:$base3,spinner:$yellow
+      #   "
+      # }
+      # _gen_fzf_default_opts
+
+      # Completions
+
+      zstyle ':completion:*:git-checkout:*' sort false
+      zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+      zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"
+      zstyle ':completion:*' menu no
+      zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --icons --color=always $realpath'
+      zstyle ':fzf-tab:complete:ls:*' fzf-preview 'eza -1 --icons --color=always $realpath'
+      zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -1 --icons --color=always $realpath'
+
+    '';
+
+    # completionInit = ''
+    #   autoload -Uz compinit && compinit
+    # '';
+
+  };
+
+  programs.eza = {
+    enable = true;
+  };
+  programs.lazygit = {
+    enable = true;
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.atuin = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  # programs.zellij = {
+  #   enable = true;
+  #   enableZshIntegration = true;
+  # };
+}

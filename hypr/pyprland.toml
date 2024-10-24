@@ -1,0 +1,18 @@
+[pyprland]
+plugins = ["scratchpads"]
+
+[scratchpads.nautilus]
+animation = "fromTop"
+command = "nautilus"
+class = "Nautilus"
+size = "50% 60%"
+monitor = {eDP-1={size="60% 65%"}}
+lazy = true
+
+[scratchpads.bitwarden]
+animation = "fromTop"
+command = "bitwarden"
+class = "Bitwarden"
+size = "50% 60%"
+monitor = {eDP-1={size="65% 70%"}}
+lazy = true
