@@ -14,6 +14,7 @@
     ./modules/home/neovim.nix
     ./modules/home/vscode.nix
     ./modules/home/notion.nix
+    # ./modules/home/rofi.nix
   ];
   home.username = "mo";
   home.homeDirectory = "/home/mo";
@@ -21,8 +22,6 @@
   fonts.fontconfig.enable = true;
 
   home.file = {
-    #".zshrc".source = ./.zshrc;
-    ".p10k.zsh".source = ./.p10k.zsh;
     # ".config/wezterm".source = ./wezterm;
     ".config/nvim".source = ./nvim;
     #".config/hypr".source = ./hypr;
@@ -52,7 +51,6 @@
     unzip
     bc
     file
-    zellij
 
     networkmanagerapplet
     powertop
@@ -70,13 +68,13 @@
     hyprpaper
     hyprpicker
     hyprlandPlugins.hyprspace
-    rofi-wayland
 
     brightnessctl
     playerctl
 
     wl-clipboard-rs
     hyprshot
+    rofi-wayland
   ];
 
   home.stateVersion = "24.05";

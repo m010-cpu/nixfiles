@@ -17,7 +17,7 @@
     ./modules/nixos/audio.nix
 
     ./modules/nixos/gdm.nix
-    # ./modules/home/starship.nix
+    ./modules/home/starship.nix
     ./modules/nixos/stylix.nix
 
   ];

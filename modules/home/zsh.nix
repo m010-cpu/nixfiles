@@ -38,11 +38,11 @@
         src = pkgs.zsh-fzf-tab;
         file = "/share/fzf-tab/fzf-tab.plugin.zsh";
       }
-      {
-        name = "powerlevel10k";
-        src = pkgs.zsh-powerlevel10k;
-        file = "/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-      }
+      # {
+      #   name = "powerlevel10k";
+      #   src = pkgs.zsh-powerlevel10k;
+      #   file = "/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      # }
       {
         name = "nix-shell";
         src = pkgs.zsh-nix-shell;
@@ -59,32 +59,6 @@
     '';
 
     initExtra = ''
-
-      # _gen_fzf_default_opts() {
-      #   local base03="#002b36"
-      #   local base02="#073642"
-      #   local base01="#586e75"
-      #   local base00="#657b83"
-      #   local base0="#839496"
-      #   local base1="#93a1a1"
-      #   local base2="#eee8d5"
-      #   local base3="#fdf6e3"
-      #   local yellow="#b58900"
-      #   local orange="#cb4b16"
-      #   local red="#dc322f"
-      #   local magenta="#d33682"
-      #   local violet="#6c71c4"
-      #   local blue="#268bd2"
-      #   local cyan="#2aa198"
-      #   local green="#859900"
-      #
-      #   export FZF_DEFAULT_OPTS="
-      #     --color fg:-1,bg:-1,hl:$blue,fg+:$base2,bg+:$base02,hl+:$blue
-      #     --color info:$yellow,prompt:$yellow,pointer:$base3,marker:$base3,spinner:$yellow
-      #   "
-      # }
-      # _gen_fzf_default_opts
-
       # Completions
 
       zstyle ':completion:*:git-checkout:*' sort false
@@ -96,11 +70,6 @@
       zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -1 --icons --color=always $realpath'
 
     '';
-
-    # completionInit = ''
-    #   autoload -Uz compinit && compinit
-    # '';
-
   };
 
   programs.eza = {
