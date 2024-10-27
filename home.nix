@@ -83,7 +83,6 @@
 
     wl-clipboard-rs
     hyprshot
-    rofi-wayland
   ];
 
   home.stateVersion = "24.05";
