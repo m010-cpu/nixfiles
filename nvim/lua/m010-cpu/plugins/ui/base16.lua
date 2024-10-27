@@ -3,12 +3,12 @@ return {
     priority = 1000,
 
     config = function()
-        local status, base16 = pcall(require, "mini.base16")
+        local status, colorscheme = pcall(require, "mini.base16")
         if not status then
             return
         end
 
-        base16.setup({
+        colorscheme.setup({
             palette = {
                 base00 = "f4f3ec",
                 base01 = "e7e6df",
@@ -27,6 +27,8 @@ return {
                 base0E = "5f9182",
                 base0F = "9d6c7c",
             },
+            use_cterm = false,
+            plugins = { default = true },
         })
     end,
 }
