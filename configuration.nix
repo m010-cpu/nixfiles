@@ -15,6 +15,7 @@
     ./modules/nixos/fingerprint.nix
     ./modules/nixos/bluetooth.nix
     ./modules/nixos/audio.nix
+    ./modules/nixos/virtualisation.nix
 
     ./modules/nixos/gdm.nix
     ./modules/home/starship.nix
@@ -46,6 +47,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "docker"
     ];
     shell = pkgs.zsh;
   };

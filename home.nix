@@ -41,16 +41,25 @@
     git
     zathura
     insomnia
+    burpsuite
 
     man-pages
     man-pages-posix
 
+    exiftool
     fastfetch
     ripgrep
     fd
     unzip
     bc
     file
+    binutils
+    p7zip
+    powershell
+
+    binwalk
+    testdisk
+    foremost
 
     networkmanagerapplet
     powertop
