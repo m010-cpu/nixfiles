@@ -32,6 +32,7 @@
   stylix = {
     # enable = true;
     # autoEnable = true;
+    targets.neovim.enable = false;
   };
 
   home.packages = with pkgs; [
