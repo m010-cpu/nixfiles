@@ -7,10 +7,8 @@
     enable = true;
     autoEnable = true;
 
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/atelier-estuary-light.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/atelier-estuary.yaml";
     image = /home/mo/.config/wallpaper/paper.png;
-    # polarity = "dark";
-    # image = /home/mo/.config/wallpaper/sample0.png;
     cursor.package = pkgs.bibata-cursors;
     cursor.name = "Bibata-Modern-Ice";
 
