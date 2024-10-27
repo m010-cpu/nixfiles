@@ -1,6 +1,6 @@
 return {
     "echasnovski/mini.base16",
-    version = false,
+    priority = 1000,
 
     config = function()
         local status, base16 = pcall(require, "mini.base16")
