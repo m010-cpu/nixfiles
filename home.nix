@@ -14,7 +14,7 @@
     ./modules/home/neovim.nix
     ./modules/home/vscode.nix
     ./modules/home/notion.nix
-    # ./modules/home/rofi.nix
+    ./modules/home/rofi.nix
   ];
   home.username = "mo";
   home.homeDirectory = "/home/mo";
