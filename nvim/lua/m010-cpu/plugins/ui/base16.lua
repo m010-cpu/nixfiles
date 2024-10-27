@@ -1,5 +1,6 @@
 return {
-    { "echasnovski/mini.base16", version = false },
+    "echasnovski/mini.base16",
+    version = false,
 
     config = function()
         local status, base16 = pcall(require, "mini.base16")
