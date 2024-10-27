@@ -7,14 +7,16 @@ return {
 
     config = function()
         local status, notify = pcall(require, "notify")
-        if (not status) then return end
+        if not status then
+            return
+        end
 
-        notify.setup({
-            background_colour = "#000000",
-        })
+        notify.setup()
 
         local status, noice = pcall(require, "noice")
-        if (not status) then return end
+        if not status then
+            return
+        end
 
         noice.setup({
             lsp = {
