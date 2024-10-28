@@ -7,6 +7,10 @@
     enable = true;
     autoEnable = true;
 
+    targets = {
+      console.enable = false;
+    };
+
     base16Scheme = "${pkgs.base16-schemes}/share/themes/atelier-estuary-light.yaml";
     image = /home/mo/.config/wallpaper/paper.png;
     cursor.package = pkgs.bibata-cursors;
