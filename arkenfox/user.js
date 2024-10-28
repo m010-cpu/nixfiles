@@ -674,7 +674,7 @@ user_pref("privacy.sanitize.sanitizeOnShutdown", true);
 user_pref("privacy.clearOnShutdown.cache", true); // [DEFAULT: true]
 user_pref("privacy.clearOnShutdown.downloads", true); // [DEFAULT: true]
 user_pref("privacy.clearOnShutdown.formdata", true); // [DEFAULT: true]
-user_pref("privacy.clearOnShutdown.history", true); // [DEFAULT: true]
+user_pref("privacy.clearOnShutdown.history", false); // [DEFAULT: true]
 user_pref("privacy.clearOnShutdown.sessions", true); // [DEFAULT: true]
 // user_pref("privacy.clearOnShutdown.siteSettings", false); // [DEFAULT: false]
 /* 2812: set Session Restore to clear on shutdown (if 2810 is true) [FF34+]
@@ -894,10 +894,10 @@ user_pref("signon.rememberSignons", false);
  * [NOTE] favicons.sqlite is sanitized on Firefox close ***/
 // user_pref("browser.chrome.site_icons", false);
 /* 5007: exclude "Undo Closed Tabs" in Session Restore ***/
-// user_pref("browser.sessionstore.max_tabs_undo", 0);
+user_pref("browser.sessionstore.max_tabs_undo", 0);
 /* 5008: disable resuming session from crash
  * [TEST] about:crashparent ***/
-// user_pref("browser.sessionstore.resume_from_crash", false);
+user_pref("browser.sessionstore.resume_from_crash", false);
 /* 5009: disable "open with" in download dialog [FF50+]
  * Application data isolation [1]
  * [1] https://bugzilla.mozilla.org/1281959 ***/
