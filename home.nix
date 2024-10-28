@@ -31,6 +31,7 @@
 
   stylix = {
     targets = {
+      firefox.profileNames = [ "dev-edition-default" ];
       neovim.enable = false;
     };
   };
