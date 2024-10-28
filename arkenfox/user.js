@@ -673,7 +673,7 @@ user_pref("privacy.sanitize.sanitizeOnShutdown", true);
  * [1] https://en.wikipedia.org/wiki/Basic_access_authentication ***/
 user_pref("privacy.clearOnShutdown.cache", true); // [DEFAULT: true]
 user_pref("privacy.clearOnShutdown.downloads", true); // [DEFAULT: true]
-user_pref("privacy.clearOnShutdown.formdata", true); // [DEFAULT: true]
+user_pref("privacy.clearOnShutdown.formdata", false); // [DEFAULT: true]
 user_pref("privacy.clearOnShutdown.history", false); // [DEFAULT: true]
 user_pref("privacy.clearOnShutdown.sessions", true); // [DEFAULT: true]
 // user_pref("privacy.clearOnShutdown.siteSettings", false); // [DEFAULT: false]
