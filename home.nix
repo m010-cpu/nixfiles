@@ -15,6 +15,7 @@
     ./modules/home/vscode.nix
     ./modules/home/notion.nix
     ./modules/home/rofi.nix
+    ./modules/home/waybar.nix
   ];
   home.username = "mo";
   home.homeDirectory = "/home/mo";
@@ -74,7 +75,6 @@
     wireshark
     tenv
 
-    waybar
     pyprland
     hyprpaper
     hyprpicker
