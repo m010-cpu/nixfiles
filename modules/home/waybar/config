@@ -1,7 +1,7 @@
 {
     "layer": "top", 
     "position": "top", 
-    "height": 24, // Waybar height
+    "height": 24,
     "modules-left": ["sway/workspaces", "sway/mode", "custom/spotify"],
     "modules-center": ["sway/window"],
     "modules-right": ["pulseaudio", "network", "cpu", "memory", "battery", "tray", "clock"],
