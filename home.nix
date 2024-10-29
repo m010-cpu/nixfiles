@@ -15,7 +15,7 @@
     ./modules/home/vscode.nix
     ./modules/home/notion.nix
     ./modules/home/rofi.nix
-    ./modules/home/waybar.nix
+    # ./modules/home/waybar.nix
     ./modules/home/direnv.nix
   ];
   home.username = "mo";
@@ -49,7 +49,7 @@
 
     man-pages
     man-pages-posix
-
+    waybar
     exiftool
     fastfetch
     ripgrep
