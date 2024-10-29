@@ -1,10 +1,10 @@
 {
-  "layer"= "top",
-  "position"= "top",
-  "height"= 24,
-  "modules-left"= ["sway/workspaces", "sway/mode", "custom/spotify"],
-  "modules-center"= ["sway/window"],
-  "modules-right"= [
+  "layer": "top",
+  "position": "top",
+  "height": 24,
+  "modules-left": ["sway/workspaces", "sway/mode", "custom/spotify"],
+  "modules-center": ["sway/window"],
+  "modules-right": [
     "pulseaudio",
     "network",
     "cpu",
@@ -13,11 +13,11 @@
     "tray",
     "clock"
   ],
-  "sway/workspaces"= {
-    "disable-scroll"= true,
-    "all-outputs"= false,
-    "format"= "{icon}",
-    "format-icons"= {
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false,
+    "format": "{icon}",
+    "format-icons": {
       "1:web": "",
       "2:code": "",
       "3:term": "",
@@ -29,55 +29,55 @@
       "default": ""
     }
   },
-  "sway/mode"= {
-    "format"= "<span style=\"italic\">{}</span>"
+  "sway/mode": {
+    "format": "<span style=\"italic\">{}</span>"
   },
-  "tray"= {
-    "spacing"= 10
+  "tray": {
+    "spacing": 10
   },
-  "clock"= {
-    "format-alt"= "{:%Y-%m-%d}"
+  "clock": {
+    "format-alt": "{:%Y-%m-%d}"
   },
-  "cpu"= {
-    "format"= "{usage}% "
+  "cpu": {
+    "format": "{usage}% "
   },
-  "memory"= {
-    "format"= "{}% "
+  "memory": {
+    "format": "{}% "
   },
-  "battery"= {
-    "bat"= "BAT0",
-    "states"= {
-      "warning"= 30,
-      "critical"= 15
+  "battery": {
+    "bat": "BAT0",
+    "states": {
+      "warning": 30,
+      "critical": 15
     },
-    "format"= "{capacity}% {icon}",
-    "format-icons"= ["", "", "", "", ""]
+    "format": "{capacity}% {icon}",
+    "format-icons": ["", "", "", "", ""]
   },
-  "network"= {
-    "format-wifi"= "{essid} ({signalStrength}%) ",
-    "format-ethernet"= "{ifname}= {ipaddr}/{cidr} ",
-    "format-disconnected"= "Disconnected ⚠"
+  "network": {
+    "format-wifi": "{essid} ({signalStrength}%) ",
+    "format-ethernet": "{ifname}= {ipaddr}/{cidr} ",
+    "format-disconnected": "Disconnected ⚠"
   },
-  "pulseaudio"= {
-    "format"= "{volume}% {icon}",
-    "format-bluetooth"= "{volume}% {icon}",
-    "format-muted"= "",
-    "format-icons"= {
-      "headphones"= "",
-      "handsfree"= "",
-      "headset"= "",
-      "phone"= "",
-      "portable"= "",
-      "car"= "",
-      "default"= ["", ""]
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-muted": "",
+    "format-icons": {
+      "headphones": "",
+      "handsfree": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", ""]
     },
-    "on-click"= "pavucontrol"
+    "on-click": "pavucontrol"
   },
-  "custom/spotify"= {
-    "format"= " {}",
-    "max-length"= 40,
-    "interval"= 30,
-    "exec"= "./waybar/mediaplayer.sh 2> /dev/null",
-    "exec-if"= "pgrep spotify"
+  "custom/spotify": {
+    "format": " {}",
+    "max-length": 40,
+    "interval": 30,
+    "exec": "./waybar/mediaplayer.sh 2> /dev/null",
+    "exec-if": "pgrep spotify"
   }
 }
