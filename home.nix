@@ -16,6 +16,7 @@
     ./modules/home/notion.nix
     ./modules/home/rofi.nix
     ./modules/home/waybar.nix
+    ./modules/home/zathura.nix
     ./modules/home/direnv.nix
   ];
   home.username = "mo";
@@ -43,13 +44,12 @@
     wget
     thunderbird
     git
-    zathura
     insomnia
     burpsuite
 
     man-pages
     man-pages-posix
-    # waybar
+
     exiftool
     fastfetch
     ripgrep
