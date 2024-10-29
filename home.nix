@@ -16,6 +16,7 @@
     ./modules/home/notion.nix
     ./modules/home/rofi.nix
     ./modules/home/waybar.nix
+    ./modules/home/direnv.nix
   ];
   home.username = "mo";
   home.homeDirectory = "/home/mo";
