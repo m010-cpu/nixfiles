@@ -47,6 +47,8 @@
     insomnia
     burpsuite
     haruna
+    clapper
+    celluloid
 
     man-pages
     man-pages-posix
