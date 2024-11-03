@@ -46,6 +46,7 @@
     git
     insomnia
     burpsuite
+    haruna
 
     man-pages
     man-pages-posix
