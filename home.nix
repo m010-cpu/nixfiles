@@ -46,6 +46,7 @@
     git
     insomnia
     burpsuite
+    yt-dlp
     haruna
     clapper
     celluloid
