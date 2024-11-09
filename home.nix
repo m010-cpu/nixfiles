@@ -71,7 +71,6 @@
     powertop
 
     bitwarden-desktop
-    spotify
     discord
 
     wireshark
