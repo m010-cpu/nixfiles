@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -18,6 +15,7 @@
     ./modules/home/waybar.nix
     ./modules/home/zathura.nix
     ./modules/home/direnv.nix
+    ./modules/home/spicetify.nix
   ];
   home.username = "mo";
   home.homeDirectory = "/home/mo";
@@ -74,7 +72,6 @@
 
     bitwarden-desktop
     spotify
-    spicetify-cli
     discord
 
     wireshark
