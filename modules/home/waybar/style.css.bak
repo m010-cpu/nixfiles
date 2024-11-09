@@ -1,20 +1,20 @@
-/** {*/
-/*  border: none;*/
-/*  border-radius: 0;*/
-/*  font-family: "MesloLGS Nerd Font";*/
-/*  font-size: 13px;*/
-/*  min-height: 0;*/
-/*}*/
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "MesloLGS Nerd Font";
+  font-size: 13px;
+  min-height: 0;
+}
 
-/*window#waybar {*/
-/*  background: transparent;*/
-/*  color: white;*/
-/*}*/
+window#waybar {
+  background: transparent;
+  color: white;
+}
 
-/*#window {*/
-/*  font-weight: bold;*/
-/*  font-family: "Ubuntu";*/
-/*}*/
+#window {
+  font-weight: bold;
+  font-family: "Ubuntu";
+}
 /*
 #workspaces {
     padding: 0 5px;
@@ -28,9 +28,9 @@
 /*  border-top: 2px solid transparent;*/
 /*}*/
 
-/*#workspaces button.active {*/
-/*  border-top: 2px solid transparent;*/
-/*}*/
+#workspaces button.active {
+  border-top: 2px solid transparent;
+}
 
 #mode {
   background: #64727d;
