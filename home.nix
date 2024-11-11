@@ -66,6 +66,7 @@
     binwalk
     testdisk
     foremost
+    volatility3
 
     networkmanagerapplet
     powertop
