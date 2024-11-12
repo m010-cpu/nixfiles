@@ -67,7 +67,7 @@
     testdisk
     foremost
     volatility3
-    kpcli
+    keepass
 
     networkmanagerapplet
     powertop
