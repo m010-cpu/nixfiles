@@ -52,7 +52,6 @@
     man-pages
     man-pages-posix
 
-    exiftool
     fastfetch
     ripgrep
     fd
@@ -63,10 +62,12 @@
     p7zip
     powershell
 
+    exiftool
     binwalk
     testdisk
     foremost
     volatility3
+    kpcli
 
     networkmanagerapplet
     powertop
