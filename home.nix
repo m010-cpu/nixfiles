@@ -61,6 +61,7 @@
     binutils
     p7zip
     powershell
+    xxd
 
     exiftool
     binwalk
