@@ -16,6 +16,7 @@
     ./modules/nixos/bluetooth.nix
     ./modules/nixos/audio.nix
     ./modules/nixos/virtualisation.nix
+    ./modules/nixos/security.nix
 
     ./modules/nixos/gdm.nix
     ./modules/home/starship.nix

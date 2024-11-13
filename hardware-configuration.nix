@@ -4,6 +4,7 @@
 {
   config,
   lib,
+  pkgs,
   modulesPath,
   ...
 }:
@@ -24,8 +25,22 @@
     "dm-snapshot"
     "cryptd"
   ];
+
+  boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_hardened;
+  boot.kernel.sysctl."net.ipv4.icmp_echo_ignore_broadcasts" = lib.mkDefault true;
   boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelParams = [
+    "slab_nomerge"
+    "page_poison=1"
+    "page_alloc.shuffle=1"
+  ];
   boot.extraModulePackages = [ ];
+
+  security.lockKernelModules = lib.mkDefault true;
+  security.protectKernelImage = lib.mkDefault true;
+  security.forcePageTableIsolation = lib.mkDefault true;
+  security.apparmor.enable = lib.mkDefault true;
+  security.apparmor.killUnconfinedConfinables = lib.mkDefault true;
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/3cf20d9a-567a-4071-bcbd-8bdf61d695f0";
