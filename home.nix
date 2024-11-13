@@ -68,6 +68,7 @@
     foremost
     volatility3
     keepass
+    pngcheck
 
     networkmanagerapplet
     powertop
