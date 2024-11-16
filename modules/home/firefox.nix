@@ -17,15 +17,15 @@
     # };
 
     profiles.dev-edition-default = {
-      extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
-        bitwarden
-        #2fas-two-factor-authentication
-        foxyproxy-standard
-        libredirect
-        privacy-badger
-        ublock-origin
-        #wappalyzer
-        metamask
+      extensions = with inputs.firefox-addons.packages; [
+        x86_64-linux.bitwarden
+        x86_64-linux."2fas-two-factor-authentication"
+        x86_64-linux.foxyproxy-standard
+        x86_64-linux.libredirect
+        x86_64-linux.privacy-badger
+        x86_64-linux.ublock-origin
+        x86_64-linux.metamask
+        x86_64-linux.tridactyl
       ];
 
       extraConfig = ''

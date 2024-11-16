@@ -75,6 +75,7 @@
     powertop
 
     bitwarden-desktop
+    goldwarden
     discord
 
     wireshark

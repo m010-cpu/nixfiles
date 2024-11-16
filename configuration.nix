@@ -53,14 +53,14 @@
     shell = pkgs.zsh;
   };
 
+  # Auto Disk Mounting
   services.gvfs.enable = true;
   services.udisks2.enable = true;
 
   # Authentication
-  services.gnome.gnome-keyring.enable = true;
+  # services.gnome.gnome-keyring.enable = true;
   security.pam.services.swaylock = { };
   security.pam.services.swaylock.fprintAuth = true;
-  #security.pam.services.greetd.enableGnomeKeyring = true;
 
   security.pam.services.swaylock.text = ''
     # account management.
@@ -115,6 +115,8 @@
     seahorse
     swaylock
   ];
-
+  nixpkgs.config.permittedInsecurePackages = [
+    "python-2.7.18.8"
+  ];
   system.stateVersion = "24.05";
 }
