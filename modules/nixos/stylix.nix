@@ -1,7 +1,9 @@
-{ pkgs, inputs, ... }:
-
 {
-  imports = [ inputs.stylix.nixosModules.stylix ];
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [inputs.stylix.nixosModules.stylix];
 
   stylix = {
     enable = true;
@@ -12,7 +14,7 @@
     };
 
     base16Scheme = "${pkgs.base16-schemes}/share/themes/atelier-estuary-light.yaml";
-    image = /home/mo/.config/wallpaper/paper.png;
+    image = ../../wallpaper/paper.png;
     cursor.package = pkgs.bibata-cursors;
     cursor.name = "Bibata-Modern-Ice";
 
@@ -37,6 +39,5 @@
         terminal = 11;
       };
     };
-
   };
 }
