@@ -21,11 +21,8 @@
   fonts.fontconfig.enable = true;
 
   home.file = {
-    # ".config/wezterm".source = ./wezterm;
     ".config/nvim".source = ./nvim;
-    #".config/hypr".source = ./hypr;
     ".config/hypr/pyprland.toml".source = ./hypr/pyprland.toml;
-    # ".config/wallpaper".source = ./wallpaper;
   };
 
   stylix = {
@@ -80,7 +77,6 @@
     tenv
 
     pyprland
-    # hyprpaper
     hyprpicker
     hyprlandPlugins.hyprspace
 
