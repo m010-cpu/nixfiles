@@ -26,7 +26,7 @@
       clang-tools
       nixd
 
-      nixfmt-rfc-style
+      alejandra
       rustfmt
       prettierd
       stylua

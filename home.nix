@@ -77,6 +77,7 @@
     bitwarden-desktop
     goldwarden
     discord
+    kicad
 
     wireshark
     tenv

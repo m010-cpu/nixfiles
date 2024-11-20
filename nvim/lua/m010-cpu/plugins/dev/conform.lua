@@ -24,7 +24,7 @@ return {
                 lua = { "stylua" },
                 python = { "isort", "black" },
                 rust = { "rustfmt" },
-                nix = { "nixfmt" },
+                nix = { "alejandra" },
             },
             format_on_save = {
                 lsp_fallback = true,

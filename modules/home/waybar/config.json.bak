@@ -7,11 +7,11 @@
     "modules-center": ["hyprland/window"],
     "modules-right": [
       "pulseaudio",
-      "disk",
-      "memory",
-      "cpu",
-      "battery",
       "network",
+      "disk",
+      "cpu",
+      "memory",
+      "battery",
       "tray",
       "clock"
     ],
@@ -34,14 +34,13 @@
       "format-alt": "{:%Y-%m-%d}"
     },
     "disk": {
-      "format": "󰻂 {free}",
-      "interval": 60
+      "format": "{free} 󰻂"
     },
     "cpu": {
-      "format": " {usage}%"
+      "format": "{usage}% "
     },
     "memory": {
-      "format": " {}%"
+      "format": "{}% "
     },
     "battery": {
       "bat": "BAT0",
@@ -49,20 +48,19 @@
         "warning": 30,
         "critical": 15
       },
-      "format": "{icon} {capacity}%",
-      "format-icons": ["", "", "", "", ""],
-      "format-charging": " {capacity}%"
+      "format": "{capacity}% {icon}",
+      "format-icons": ["", "", "", "", ""]
     },
     "network": {
-      "format-wifi": " ",
-      "format-ethernet": " ",
-      "format-disconnected": " ",
-      "tooltip-format-wifi": "{essid} ({signalStrength}%)\n󰩟 {ipaddr}/{cidr}\n  {gwaddr}\n {bandwidthUpBits}\n {bandwidthDownBits}",
-      "tooltip-format-ethernet": "{ifname}\n󰩟 {ipaddr}/{cidr}\n  {gwaddr}\n {bandwidthUpBits}\n {bandwidthDownBits}"
+      "format-wifi": "",
+      "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+      // "format-wifi": "{essid} ({signalStrength}%) ",
+      // "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+      "format-disconnected": "Disconnected ⚠"
     },
     "pulseaudio": {
-      "format": "{icon} {volume}%",
-      "format-bluetooth": "{icon} {volume}%",
+      "format": "{volume}% {icon}",
+      "format-bluetooth": "{volume}% {icon}",
       "format-muted": "",
       "format-icons": {
         "headphones": "",
