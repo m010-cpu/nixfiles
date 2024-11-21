@@ -2,16 +2,14 @@
   pkgs,
   inputs,
   ...
-}:
-
-{
-  imports = [ inputs.hyprland.homeManagerModules.default ];
+}: {
+  imports = [inputs.hyprland.homeManagerModules.default];
 
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
     systemd.enable = true;
-    systemd.variables = [ "--all" ];
+    systemd.variables = ["--all"];
     package = inputs.hyprland.packages.${pkgs.system}.default;
 
     # plugins = [
