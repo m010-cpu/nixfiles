@@ -1219,6 +1219,7 @@
       "original": {
         "dir": "nix",
         "owner": "wez",
+        "ref": "main",
         "repo": "wezterm",
         "type": "github"
       }

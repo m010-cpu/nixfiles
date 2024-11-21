@@ -34,7 +34,7 @@
     };
 
     wezterm = {
-      url = "github:wez/wezterm?dir=nix";
+      url = "github:wez/wezterm/main?dir=nix";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -54,31 +54,33 @@
     };
   };
 
-  outputs =
-    inputs@{ nixpkgs, home-manager, ... }:
-    {
-      nixosConfigurations = {
-        terra = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = {
-            inherit inputs;
-          };
-          modules = [
-            ./configuration.nix
-            #nixos-hardware.nixosModules.lenovo-thinkpad-e14-intel
-            #inputs.hyprland.nixosModules.default
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "backup";
-              home-manager.users.mo.imports = [ ./home.nix ];
-              home-manager.extraSpecialArgs = {
-                inherit inputs;
-              };
-            }
-          ];
+  outputs = inputs @ {
+    nixpkgs,
+    home-manager,
+    ...
+  }: {
+    nixosConfigurations = {
+      terra = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {
+          inherit inputs;
         };
+        modules = [
+          ./configuration.nix
+          #nixos-hardware.nixosModules.lenovo-thinkpad-e14-intel
+          #inputs.hyprland.nixosModules.default
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
+            home-manager.users.mo.imports = [./home.nix];
+            home-manager.extraSpecialArgs = {
+              inherit inputs;
+            };
+          }
+        ];
       };
     };
+  };
 }

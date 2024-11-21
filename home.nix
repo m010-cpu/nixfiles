@@ -47,6 +47,7 @@
     man-pages-posix
 
     fastfetch
+    evtest
     ripgrep
     fd
     unzip

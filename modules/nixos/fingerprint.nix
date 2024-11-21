@@ -1,17 +1,25 @@
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   fpcbep = pkgs.fetchzip {
     url = "https://download.lenovo.com/pccbbs/mobiles/r1slm01w.zip";
     hash = "sha256-/buXlp/WwL16dsdgrmNRxyudmdo9m1HWX0eeaARbI3Q=";
     stripRoot = false;
   };
   libfprint = pkgs.libfprint.overrideAttrs (attrs: {
-    patches = attrs.patches or [ ] ++ [
-      (pkgs.fetchpatch {
-        url = "https://gitlab.freedesktop.org/libfprint/libfprint/-/merge_requests/396.patch";
-        sha256 = "sha256-+5B5TPrl0ZCuuLvKNsGtpiU0OiJO7+Q/iz1+/2U4Taw=";
-      })
-    ];
+    version = "1.94.6";
+    src = pkgs.fetchgit {
+      url = "https://gitlab.freedesktop.org/libfprint/libfprint.git";
+      rev = "v1.94.6";
+      sha256 = "sha256-lDnAXWukBZSo8X6UEVR2nOMeVUi/ahnJgx2cP+vykZ8=";
+    };
+    patches =
+      attrs.patches
+      or []
+      ++ [
+        (pkgs.fetchpatch {
+          url = "https://gitlab.freedesktop.org/libfprint/libfprint/-/merge_requests/396.patch";
+          sha256 = "sha256-+5B5TPrl0ZCuuLvKNsGtpiU0OiJO7+Q/iz1+/2U4Taw=";
+        })
+      ];
     postPatch =
       (attrs.postPatch or "")
       + ''
@@ -30,11 +38,10 @@ let
         substituteInPlace "$out/lib/udev/rules.d/70-libfprint-2.rules" --replace "/bin/sh" "${pkgs.runtimeShell}"
       '';
   });
-  fprintd = pkgs.fprintd.override { inherit libfprint; };
-in
-{
+  fprintd = pkgs.fprintd.override {inherit libfprint;};
+in {
   systemd.services.fprintd = {
-    wantedBy = [ "multi-user.target" ];
+    wantedBy = ["multi-user.target"];
     serviceConfig.Type = "simple";
   };
 
@@ -42,5 +49,5 @@ in
     enable = true;
     package = fprintd;
   };
-  services.udev.packages = [ libfprint ];
+  services.udev.packages = [libfprint];
 }
