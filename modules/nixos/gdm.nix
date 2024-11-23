@@ -1,6 +1,4 @@
-{ config, pkgs, ... }:
-
-{
+{pkgs, ...}: {
   services.displayManager.defaultSession = "hyprland";
 
   services.xserver = {
@@ -8,7 +6,6 @@
     displayManager.gdm = {
       enable = true;
       wayland = true;
-      #settings = 
     };
   };
 
