@@ -42,6 +42,7 @@
     haruna
     clapper
     celluloid
+    localsend
 
     man-pages
     man-pages-posix
