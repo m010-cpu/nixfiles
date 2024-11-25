@@ -4,7 +4,10 @@
     "flakes"
   ];
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = ["python-2.7.18.8"];
+  };
 
   nix.settings.auto-optimise-store = true;
   nix.optimise.automatic = true;

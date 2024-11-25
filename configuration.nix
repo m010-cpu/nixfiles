@@ -2,9 +2,7 @@
   pkgs,
   inputs,
   ...
-}:
-
-{
+}: {
   imports = [
     ./hardware-configuration.nix
 
@@ -21,7 +19,6 @@
     ./modules/nixos/gdm.nix
     ./modules/home/starship.nix
     ./modules/nixos/stylix.nix
-
   ];
 
   # Networking
@@ -59,7 +56,7 @@
 
   # Authentication
   # services.gnome.gnome-keyring.enable = true;
-  security.pam.services.swaylock = { };
+  security.pam.services.swaylock = {};
   security.pam.services.swaylock.fprintAuth = true;
 
   security.pam.services.swaylock.text = ''
@@ -115,8 +112,6 @@
     seahorse
     swaylock
   ];
-  nixpkgs.config.permittedInsecurePackages = [
-    "python-2.7.18.8"
-  ];
+
   system.stateVersion = "24.05";
 }
