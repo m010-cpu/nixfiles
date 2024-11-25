@@ -55,7 +55,7 @@
   services.udisks2.enable = true;
 
   # Authentication
-  # services.gnome.gnome-keyring.enable = true;
+  services.gnome.gnome-keyring.enable = true;
   security.pam.services.swaylock = {};
   security.pam.services.swaylock.fprintAuth = true;
 
