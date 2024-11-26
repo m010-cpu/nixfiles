@@ -1,9 +1,13 @@
-{ pkgs, inputs, ... }:
-
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   programs.wezterm = {
     enable = true;
     package = inputs.wezterm.packages.${pkgs.system}.default;
+    enableZshIntegration = false;
+    enableBashIntegration = false;
     extraConfig = ''
       return {
         hide_tab_bar_if_only_one_tab = true,

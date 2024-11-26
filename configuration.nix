@@ -17,8 +17,9 @@
     ./modules/nixos/security.nix
 
     ./modules/nixos/gdm.nix
-    ./modules/home/starship.nix
     ./modules/nixos/stylix.nix
+
+    ./modules/home/starship.nix
   ];
 
   # Networking
