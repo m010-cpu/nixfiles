@@ -25,6 +25,7 @@
       nixd
       asm-lsp
 
+      asmfmt
       alejandra
       rustfmt
       prettierd

@@ -103,6 +103,7 @@ return {
         require("lspconfig").asm_lsp.setup({
             on_attach = on_attach,
             capabilities = capabilities,
+            filetypes = { "asm", "s", "S", "vmasm" },
         })
 
         require("lspconfig").clangd.setup({
