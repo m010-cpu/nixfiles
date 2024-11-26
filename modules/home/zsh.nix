@@ -1,97 +1,88 @@
-{ config, pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.zsh = {
     enable = true;
 
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
+    # enableCompletion = true;
+    # autosuggestion.enable = true;
+    # syntaxHighlighting.enable = true;
+    #
+    # shellAliases = {
+    #   cd = "z";
+    #   ls = "eza --icons=always";
+    #   ll = "eza -alh --icons=always";
+    #   tree = "eza --icons=always --tree";
+    #   lgit = "lazygit";
+    #   update = "sudo nixos-rebuild switch --flake /home/mo/nixfiles";
+    # };
+    #
+    # history = {
+    #   size = 10000;
+    #   extended = true;
+    #   ignoreAllDups = true;
+    #   share = true;
+    # };
 
-    shellAliases = {
-      cd = "z";
-      ls = "eza --icons=always";
-      ll = "eza -alh --icons=always";
-      tree = "eza --icons=always --tree";
-      lgit = "lazygit";
-      update = "sudo nixos-rebuild switch --flake /home/mo/nixfiles";
-    };
-    history = {
-      size = 10000;
-      extended = true;
-      ignoreAllDups = true;
-      share = true;
-    };
+    # plugins = [
+    #   {
+    #     name = "fzf-tab";
+    #     src = pkgs.zsh-fzf-tab;
+    #     file = "/share/fzf-tab/fzf-tab.plugin.zsh";
+    #   }
+    #   # {
+    #   #   name = "powerlevel10k";
+    #   #   src = pkgs.zsh-powerlevel10k;
+    #   #   file = "/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+    #   # }
+    #   {
+    #     name = "nix-shell";
+    #     src = pkgs.zsh-nix-shell;
+    #     file = "/share/zsh-nix-shell/nix-shell.plugin.zsh";
+    #   }
+    # ];
 
-    # plugins = [{
-    #   name = "fzf-tab";
-    #   src = pkgs.fetchFromGitHub {
-    #     owner = "Aloxaf";
-    #     repo = "fzf-tab";
-    #     rev = "c2b4aa5ad2532cca91f23908ac7f00efb7ff09c9";
-    #     sha256 = "1b4pksrc573aklk71dn2zikiymsvq19bgvamrdffpf7azpq6kxl2";
-    #   };
-    # }];
-    plugins = [
-      {
-        name = "fzf-tab";
-        src = pkgs.zsh-fzf-tab;
-        file = "/share/fzf-tab/fzf-tab.plugin.zsh";
-      }
-      # {
-      #   name = "powerlevel10k";
-      #   src = pkgs.zsh-powerlevel10k;
-      #   file = "/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-      # }
-      {
-        name = "nix-shell";
-        src = pkgs.zsh-nix-shell;
-        file = "/share/zsh-nix-shell/nix-shell.plugin.zsh";
-      }
-    ];
+    # initExtraFirst = ''
+    #   if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
+    #     source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
+    #   fi
+    #
+    #   [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+    # '';
 
-    initExtraFirst = ''
-      if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
-        source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
-      fi
-
-      [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-    '';
-
-    initExtra = ''
-      # Completions
-
-      zstyle ':completion:*:git-checkout:*' sort false
-      zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-      zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"
-      zstyle ':completion:*' menu no
-      zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --icons --color=always $realpath'
-      zstyle ':fzf-tab:complete:ls:*' fzf-preview 'eza -1 --icons --color=always $realpath'
-      zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -1 --icons --color=always $realpath'
-
-    '';
+    # initExtra = ''
+    #   # Completions
+    #
+    #   zstyle ':completion:*:git-checkout:*' sort false
+    #   zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+    #   zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"
+    #   zstyle ':completion:*' menu no
+    #   zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --icons --color=always $realpath'
+    #   zstyle ':fzf-tab:complete:ls:*' fzf-preview 'eza -1 --icons --color=always $realpath'
+    #   zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -1 --icons --color=always $realpath'
+    #
+    # '';
   };
 
   programs.eza = {
     enable = true;
   };
+
   programs.lazygit = {
     enable = true;
   };
 
   programs.zoxide = {
     enable = true;
-    enableZshIntegration = true;
+    # enableZshIntegration = true;
   };
 
   programs.fzf = {
     enable = true;
-    enableZshIntegration = true;
+    # enableZshIntegration = true;
   };
 
   programs.atuin = {
     enable = true;
-    enableZshIntegration = true;
+    # enableZshIntegration = true;
   };
 
   # programs.zellij = {

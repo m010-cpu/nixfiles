@@ -1,5 +1,5 @@
 {
-  programs.swaync = {
+  services.swaync = {
     enable = true;
   };
 }
