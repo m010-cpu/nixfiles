@@ -14,7 +14,7 @@
     ./modules/home/zathura.nix
     ./modules/home/direnv.nix
     ./modules/home/spicetify.nix
-    ./modules/home/opensnitch.nix.nix
+    ./modules/home/opensnitch.nix
   ];
   home.username = "mo";
   home.homeDirectory = "/home/mo";
