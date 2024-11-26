@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.neovim = {
     enable = true;
 
@@ -25,6 +23,7 @@
       gopls
       clang-tools
       nixd
+      asm-lsp
 
       alejandra
       rustfmt
