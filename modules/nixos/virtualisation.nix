@@ -10,6 +10,6 @@
     };
 
     virtualbox.host.enable = true;
-    users.extraGroups.vboxusers.members = ["mo"];
   };
+  users.extraGroups.vboxusers.members = ["mo"];
 }
