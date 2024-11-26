@@ -75,6 +75,8 @@
     discord
     kicad
 
+    gns3-gui
+    gns3-server
     wireshark
     tenv
 
