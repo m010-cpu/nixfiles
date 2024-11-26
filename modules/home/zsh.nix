@@ -80,10 +80,10 @@
     # enableZshIntegration = true;
   };
 
-  programs.atuin = {
-    enable = true;
-    # enableZshIntegration = true;
-  };
+  # programs.atuin = {
+  #   enable = true;
+  #   # enableZshIntegration = true;
+  # };
 
   # programs.zellij = {
   #   enable = true;
