@@ -51,6 +51,7 @@
     man-pages-posix
 
     fastfetch
+
     evtest
     ripgrep
     fd
@@ -61,7 +62,6 @@
     p7zip
     powershell
     xxd
-
     exiftool
     binwalk
     testdisk
@@ -69,6 +69,7 @@
     volatility3
     keepass
     pngcheck
+    ghidra
 
     networkmanagerapplet
     powertop
@@ -77,6 +78,7 @@
     goldwarden
     discord
     kicad
+    xournalpp
 
     gns3-gui
     gns3-server
