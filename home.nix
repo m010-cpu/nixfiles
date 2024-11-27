@@ -57,6 +57,7 @@
     yt-dlp
     fastfetch
     powertop
+    openssl
     man-pages
     man-pages-posix
 
