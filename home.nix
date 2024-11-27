@@ -36,64 +36,66 @@
 
   home.packages = with pkgs; [
     alacritty
-    wget
     thunderbird
-    git
     insomnia
     burpsuite
-    yt-dlp
     haruna
     clapper
     celluloid
     localsend
+    bitwarden-desktop
+    goldwarden
+    discord
+    kicad
+    xournalpp
+    gns3-gui
+    gns3-server
+    wireshark
 
+    git
+    wget
+    yt-dlp
+    fastfetch
+    powertop
     man-pages
     man-pages-posix
 
-    fastfetch
+    gcc
+    gdb
+    tenv
 
+    binutils
+    p7zip
     evtest
     ripgrep
     fd
     unzip
     bc
     file
-    binutils
-    p7zip
     powershell
     xxd
     exiftool
+    apktool
+    zsteg
+    steghide
+    stegsolve
     binwalk
     testdisk
     foremost
     volatility3
-    keepass
     pngcheck
     ghidra
+    radare2
+    keepass
 
     networkmanagerapplet
-    powertop
-
-    bitwarden-desktop
-    goldwarden
-    discord
-    kicad
-    xournalpp
-
-    gns3-gui
-    gns3-server
-    wireshark
-    tenv
-
     pyprland
     hyprpicker
     hyprlandPlugins.hyprspace
-
-    brightnessctl
-    playerctl
-
     wl-clipboard-rs
     hyprshot
+    brightnessctl
+    playerctl
   ];
 
   home.stateVersion = "24.05";
