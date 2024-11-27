@@ -58,6 +58,7 @@
     fastfetch
     powertop
     openssl
+    bat
     man-pages
     man-pages-posix
 
