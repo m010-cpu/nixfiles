@@ -4,9 +4,7 @@
   pkgs,
   modulesPath,
   ...
-}:
-
-{
+}: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
@@ -25,13 +23,13 @@
 
   # boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_hardened;
   boot.kernel.sysctl."net.ipv4.icmp_echo_ignore_broadcasts" = lib.mkDefault true;
-  boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelModules = ["kvm-intel" "uinput"];
   boot.kernelParams = [
     "slab_nomerge"
     "page_poison=1"
     "page_alloc.shuffle=1"
   ];
-  boot.extraModulePackages = [ ];
+  boot.extraModulePackages = [];
 
   security.lockKernelModules = lib.mkDefault true;
   security.protectKernelImage = lib.mkDefault true;
@@ -56,7 +54,7 @@
   };
 
   swapDevices = [
-    { device = "/dev/disk/by-uuid/836d0cc6-abaa-4a3d-939f-aa792835330d"; }
+    {device = "/dev/disk/by-uuid/836d0cc6-abaa-4a3d-939f-aa792835330d";}
   ];
 
   networking.useDHCP = lib.mkDefault true;

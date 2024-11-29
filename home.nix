@@ -51,6 +51,9 @@
     gns3-gui
     gns3-server
     wireshark
+    anki
+    teams-for-linux
+    zoom-us
 
     git
     wget
