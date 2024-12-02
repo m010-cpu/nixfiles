@@ -12,8 +12,8 @@
       "cpu",
       "battery",
       "network",
-      "tray",
       "custom/notification",
+      "tray",
       "clock"
     ],
     "hyprland/workspaces": {
@@ -55,9 +55,9 @@
       "format-charging": " {capacity}%"
     },
     "network": {
-      "format-wifi": " ",
-      "format-ethernet": " ",
-      "format-disconnected": " ",
+      "format-wifi": "",
+      "format-ethernet": "",
+      "format-disconnected": "",
       "tooltip-format-wifi": "{essid} ({signalStrength}%)\n󰩟 {ipaddr}/{cidr}\n  {gwaddr}\n {bandwidthUpBits}\n {bandwidthDownBits}",
       "tooltip-format-ethernet": "{ifname}\n󰩟 {ipaddr}/{cidr}\n  {gwaddr}\n {bandwidthUpBits}\n {bandwidthDownBits}"
     },
@@ -67,8 +67,6 @@
       "format-muted": "",
       "format-icons": {
         "headphones": "",
-        "handsfree": "",
-        "headset": "",
         "phone": "",
         "portable": "",
         "car": "",
@@ -80,14 +78,14 @@
       "tooltip": false,
       "format": "{icon}",
       "format-icons": {
-        "notification": " <span foreground='red'><sup></sup></span>",
-        "none": " ",
-        "dnd-notification": " <span foreground='red'><sup></sup></span>",
-        "dnd-none": " ",
-        "inhibited-notification": " <span foreground='red'><sup></sup></span>",
-        "inhibited-none": " ",
-        "dnd-inhibited-notification": " <span foreground='red'><sup></sup></span>",
-        "dnd-inhibited-none": " "
+        "notification": "󱅫",
+        "none": "",
+        "dnd-notification": "",
+        "dnd-none": "󰂛",
+        "inhibited-notification": "",
+        "inhibited-none": "",
+        "dnd-inhibited-notification": "",
+        "dnd-inhibited-none": ""
       },
       "return-type": "json",
       "exec-if": "which swaync-client",
@@ -96,6 +94,7 @@
       "on-click-right": "swaync-client -d -sw",
       "escape": true
     },
+
     "custom/spotify": {
       "format": " {}",
       "max-length": 40,

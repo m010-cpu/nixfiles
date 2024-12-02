@@ -26,6 +26,7 @@ return {
                 rust = { "rustfmt" },
                 nix = { "alejandra" },
                 asm = { "asmfmt" },
+                sql = { "sqlfluff" },
             },
             format_on_save = {
                 lsp_fallback = true,

@@ -59,6 +59,7 @@
       zstyle ':fzf-tab:complete:ls:*' fzf-preview 'eza -1 --icons --color=always $realpath'
       zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -1 --icons --color=always $realpath'
 
+        cal -3
     '';
   };
 

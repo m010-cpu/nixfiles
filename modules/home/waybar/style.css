@@ -1,36 +1,9 @@
-/*#mode {*/
-/*  background: #64727d;*/
-/*  border-bottom: 3px solid white;*/
-/*}*/
-
-#clock,
-#battery,
-#disk,
-#cpu,
-#memory,
-#network,
-#pulseaudio,
-#custom-spotify,
-#tray,
-#mode {
-  padding: 0 3px;
-  margin: 0 2px;
-}
-
 #clock {
   font-weight: bold;
 }
 
 #battery {
 }
-
-/*#battery.warning:not(.charging) {*/
-/*  animation-name: blink;*/
-/*  animation-duration: 0.5s;*/
-/*  animation-timing-function: linear;*/
-/*  animation-iteration-count: infinite;*/
-/*  animation-direction: alternate;*/
-/*}*/
 
 #cpu {
 }
@@ -39,6 +12,7 @@
 }
 
 #network {
+  padding: 0 20px;
 }
 
 #network.disconnected icon {

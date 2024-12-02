@@ -62,6 +62,7 @@
     powertop
     openssl
     bat
+    gh
     man-pages
     man-pages-posix
 

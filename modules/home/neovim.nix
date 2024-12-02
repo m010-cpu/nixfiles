@@ -34,6 +34,7 @@
       black
       pylint
       eslint_d
+      sqlfluff
     ];
   };
 }
