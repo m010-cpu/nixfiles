@@ -24,6 +24,7 @@
       clang-tools
       nixd
       asm-lsp
+      sqls
 
       asmfmt
       alejandra
