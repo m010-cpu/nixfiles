@@ -28,6 +28,9 @@ opt.iskeyword:append("-")
 -- cursor line --
 opt.cursorline = true
 
+-- column sign --
+opt.signcolumn = "yes"
+
 -- appearance --
 opt.termguicolors = true
 
