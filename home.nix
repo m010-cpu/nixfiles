@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./modules/home/hyprland.nix
+    ./modules/home/hypridle.nix
     ./modules/home/swaylock.nix
     ./modules/home/zsh.nix
     ./modules/home/wezterm.nix
@@ -65,6 +66,9 @@
     gh
     man-pages
     man-pages-posix
+    font-awesome
+    mpd
+    ffmpeg
 
     gcc
     gdb
