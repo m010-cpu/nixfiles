@@ -6,6 +6,7 @@
     "modules-left": ["hyprland/workspaces", "hyprland/mode", "custom/spotify"],
     "modules-center": ["hyprland/window"],
     "modules-right": [
+      "tray",
       "pulseaudio",
       "disk",
       "memory",
@@ -13,7 +14,6 @@
       "battery",
       "network",
       "custom/notification",
-      "tray",
       "clock"
     ],
     "hyprland/workspaces": {
@@ -57,7 +57,7 @@
     "network": {
       "format-wifi": "",
       "format-ethernet": "",
-      "format-disconnected": "",
+      "format-disconnected": "󱘖",
       "tooltip-format-wifi": "{essid} ({signalStrength}%)\n󰩟 {ipaddr}/{cidr}\n  {gwaddr}\n {bandwidthUpBits}\n {bandwidthDownBits}",
       "tooltip-format-ethernet": "{ifname}\n󰩟 {ipaddr}/{cidr}\n  {gwaddr}\n {bandwidthUpBits}\n {bandwidthDownBits}"
     },
@@ -93,14 +93,6 @@
       "on-click": "swaync-client -t -sw",
       "on-click-right": "swaync-client -d -sw",
       "escape": true
-    },
-
-    "custom/spotify": {
-      "format": " {}",
-      "max-length": 40,
-      "interval": 30,
-      "exec": "./waybar/mediaplayer.sh 2> /dev/null",
-      "exec-if": "pgrep spotify"
     }
   }
 }
