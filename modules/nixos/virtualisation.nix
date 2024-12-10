@@ -12,6 +12,7 @@
     virtualbox.host.enable = true;
   };
 
+  users.groups.ubridge = {};
   security.wrappers.ubridge = {
     capabilities = "cap_net_raw,cap_net_admin=eip";
     group = "ubridge";
