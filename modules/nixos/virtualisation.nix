@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   virtualisation = {
     docker = {
       enable = true;
@@ -10,6 +10,14 @@
     };
 
     virtualbox.host.enable = true;
+  };
+
+  security.wrappers.ubridge = {
+    capabilities = "cap_net_raw,cap_net_admin=eip";
+    group = "ubridge";
+    owner = "root";
+    permissions = "u=rwx,g=rx,o=r";
+    source = "${pkgs.ubridge}/bin/ubridge";
   };
   # services.gns3-server = {
   #   enable = true;
