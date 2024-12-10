@@ -11,8 +11,10 @@
 
     virtualbox.host.enable = true;
   };
-  services.gns3-server = {
-    enable = true;
-    ubridge.enable = true;
-  };
+  # services.gns3-server = {
+  #   enable = true;
+  #   ubridge.enable = true;
+  #   dynamips.enable = true;
+  #   vpcs.enable = true;
+  # };
 }
