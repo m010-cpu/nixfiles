@@ -31,7 +31,7 @@
   ];
   boot.extraModulePackages = [];
 
-  security.lockKernelModules = lib.mkDefault true;
+  # security.lockKernelModules = lib.mkDefault true;
   security.protectKernelImage = lib.mkDefault true;
   security.forcePageTableIsolation = lib.mkDefault true;
   security.apparmor.enable = lib.mkDefault true;

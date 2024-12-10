@@ -18,6 +18,7 @@
     ./modules/home/direnv.nix
     ./modules/home/spicetify.nix
     ./modules/home/opensnitch.nix
+    ./modules/home/gns3.nix
   ];
   home.username = "mo";
   home.homeDirectory = "/home/mo";
@@ -49,12 +50,10 @@
     discord
     kicad
     xournalpp
-    gns3-gui
-    gns3-server
-    wireshark
     anki
     teams-for-linux
     zoom-us
+    wireshark
 
     git
     wget

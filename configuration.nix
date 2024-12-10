@@ -47,6 +47,7 @@
       "networkmanager"
       "wheel"
       "docker"
+      "ubridge"
     ];
     shell = pkgs.zsh;
   };
