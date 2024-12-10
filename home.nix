@@ -18,7 +18,6 @@
     ./modules/home/direnv.nix
     ./modules/home/spicetify.nix
     ./modules/home/opensnitch.nix
-    ./modules/home/gns3.nix
   ];
   home.username = "mo";
   home.homeDirectory = "/home/mo";
@@ -54,6 +53,7 @@
     teams-for-linux
     zoom-us
     wireshark
+    gns3-gui
 
     git
     wget

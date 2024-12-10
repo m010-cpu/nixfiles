@@ -47,6 +47,7 @@
       "networkmanager"
       "wheel"
       "docker"
+      "vboxusers"
       "ubridge"
     ];
     shell = pkgs.zsh;

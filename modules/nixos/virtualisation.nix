@@ -11,5 +11,8 @@
 
     virtualbox.host.enable = true;
   };
-  users.extraGroups.vboxusers.members = ["mo"];
+  services.gns3-server = {
+    enable = true;
+    ubridge.enable = true;
+  };
 }
