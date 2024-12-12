@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   modulesPath,
   ...
 }: {
@@ -15,6 +14,7 @@
     "nvme"
     "usb_storage"
     "sd_mod"
+    "hfsplus"
   ];
   boot.initrd.kernelModules = [
     "dm-snapshot"

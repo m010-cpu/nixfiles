@@ -111,9 +111,6 @@
   # Packages
   environment.systemPackages = with pkgs; [
     efibootmgr
-    usbutils
-    udiskie
-    udisks
 
     nautilus
     seahorse

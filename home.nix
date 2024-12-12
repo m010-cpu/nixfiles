@@ -81,6 +81,8 @@
     gdb
     tenv
 
+    usbutils
+    hfsprogs
     inetutils
     binutils
     p7zip
