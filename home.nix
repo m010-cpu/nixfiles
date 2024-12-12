@@ -54,6 +54,9 @@
     zoom-us
     rnote
 
+    rhythmbox
+    libgpod
+
     wireshark
     gns3-server
     gns3-gui
