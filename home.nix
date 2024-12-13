@@ -66,6 +66,7 @@
     git
     wget
     yt-dlp
+    spotdl
     fastfetch
     powertop
     openssl
