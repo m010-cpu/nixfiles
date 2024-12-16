@@ -14,7 +14,7 @@
     "nvme"
     "usb_storage"
     "sd_mod"
-    "hfsplus"
+    # "hfsplus"
   ];
   boot.initrd.kernelModules = [
     "dm-snapshot"
