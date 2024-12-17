@@ -80,7 +80,8 @@
 
     gcc
     gdb
-    tenv
+    criterion
+    libbpf
 
     usbutils
     hfsprogs
