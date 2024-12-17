@@ -53,6 +53,7 @@
     teams-for-linux
     zoom-us
     rnote
+    parabolic
 
     rhythmbox
     libgpod
