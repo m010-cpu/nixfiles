@@ -54,6 +54,7 @@
     zoom-us
     rnote
     parabolic
+    ungoogled-chromium
 
     rhythmbox
     libgpod
