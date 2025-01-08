@@ -52,6 +52,7 @@
     anki
     teams-for-linux
     zoom-us
+    wechat-uos
     rnote
     parabolic
     ungoogled-chromium
