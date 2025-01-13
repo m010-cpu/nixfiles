@@ -64,8 +64,6 @@
         system = "x86_64-linux";
         specialArgs = {
           inherit inputs;
-          nixpkgs.config.allowUnfree = true;
-          nixpkgs.config.permittedInsecurePackages = ["python-2.7.18.8"];
         };
         modules = [
           ./configuration.nix
