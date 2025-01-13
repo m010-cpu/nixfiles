@@ -20,12 +20,11 @@
 
     fonts = {
       monospace = {
-        package = pkgs.nerdfonts;
+        package = pkgs.nerd-fonts.meslo-lg;
         name = "MesloLGS Nerd Font";
       };
       sansSerif = {
-        package = pkgs.nerdfonts;
-        #package = pkgs.nerdfonts.override { fonts = ["MesloLG"]; };
+        package = pkgs.nerd-fonts.meslo-lg;
         name = "MesloLGS Nerd Font";
       };
       emoji = {
