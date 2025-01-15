@@ -6,7 +6,7 @@
 
   nixpkgs.config = {
     allowUnfree = true;
-    permittedInsecurePackages = ["python-2.7.18.8"];
+    permittedInsecurePackages = ["python-2.7.18.8" "python2.7-tkinter-2.7.18.8"];
   };
 
   nix.settings.auto-optimise-store = true;

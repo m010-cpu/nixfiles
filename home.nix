@@ -17,7 +17,7 @@
     ./modules/home/zathura.nix
     ./modules/home/direnv.nix
     ./modules/home/spicetify.nix
-    ./modules/home/opensnitch.nix
+    # ./modules/home/opensnitch.nix
   ];
   home.username = "mo";
   home.homeDirectory = "/home/mo";
@@ -37,6 +37,7 @@
 
   home.packages = with pkgs; [
     (callPackage ./vol.nix {})
+    (callPackage ./vol3.nix {})
     alacritty
     thunderbird
     insomnia
@@ -57,6 +58,7 @@
     rnote
     parabolic
     ungoogled-chromium
+    opensnitch-ui
 
     rhythmbox
     libgpod
@@ -108,7 +110,6 @@
     binwalk
     testdisk
     foremost
-    volatility3
     pngcheck
     ghidra
     radare2
