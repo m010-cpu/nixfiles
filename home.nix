@@ -36,8 +36,6 @@
   };
 
   home.packages = with pkgs; [
-    (callPackage ./vol.nix {})
-    (callPackage ./vol3.nix {})
     alacritty
     thunderbird
     insomnia
@@ -114,6 +112,8 @@
     ghidra
     radare2
     keepass
+    volatility3
+    (callPackage ./vol.nix {})
 
     networkmanagerapplet
     pyprland
