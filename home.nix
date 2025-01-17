@@ -112,6 +112,7 @@
     ghidra
     radare2
     keepass
+    hashcat
     volatility3
     (callPackage ./vol.nix {})
 

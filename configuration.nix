@@ -111,6 +111,7 @@
   # Packages
   environment.systemPackages = with pkgs; [
     efibootmgr
+    intel-ocl
 
     nautilus
     seahorse
