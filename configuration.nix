@@ -54,6 +54,9 @@
     shell = pkgs.zsh;
   };
 
+  # OpenCL Driver
+  hardware.opengl.extraPackages = with pkgs; [intel-ocl];
+
   # Tablet Driver
   hardware.opentabletdriver.enable = true;
 
@@ -111,8 +114,6 @@
   # Packages
   environment.systemPackages = with pkgs; [
     efibootmgr
-    intel-ocl
-
     nautilus
     seahorse
     swaylock
