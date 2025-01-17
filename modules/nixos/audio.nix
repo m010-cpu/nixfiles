@@ -1,7 +1,5 @@
-{ pkgs, ... }:
-
-{
-  hardware.pulseaudio.enable = false;
+{pkgs, ...}: {
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -18,7 +16,6 @@
   ];
 
   services.pipewire.extraConfig.pipewire = {
-
     "99-input-denoising" = {
       "context.modules" = [
         {

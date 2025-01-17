@@ -55,7 +55,7 @@
   };
 
   # OpenCL Driver
-  hardware.opengl.extraPackages = with pkgs; [intel-ocl];
+  hardware.graphics.extraPackages = with pkgs; [intel-ocl];
 
   # Tablet Driver
   hardware.opentabletdriver.enable = true;
