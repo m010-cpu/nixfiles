@@ -111,6 +111,9 @@
     pngcheck
     ghidra
     radare2
+    pkcrack
+    bkcrack
+    apktool
     keepass
     hashcat
     autopsy
