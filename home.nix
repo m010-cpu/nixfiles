@@ -113,6 +113,8 @@
     radare2
     keepass
     hashcat
+    autopsy
+    sleuthkit
     volatility3
     (callPackage ./vol.nix {})
 
