@@ -57,6 +57,8 @@
     parabolic
     ungoogled-chromium
     opensnitch-ui
+    libreoffice
+    jetbrains.idea-ultimate
 
     rhythmbox
     libgpod
@@ -118,6 +120,8 @@
     hashcat
     autopsy
     sleuthkit
+    ilspycmd
+    avalonia-ilspy
     volatility3
     (callPackage ./vol.nix {})
 
