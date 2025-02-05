@@ -59,6 +59,7 @@
     opensnitch-ui
     libreoffice
     jetbrains.idea-ultimate
+    telegram-desktop
 
     rhythmbox
     libgpod
