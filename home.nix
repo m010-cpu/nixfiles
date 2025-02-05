@@ -60,6 +60,7 @@
     libreoffice
     jetbrains.idea-ultimate
     telegram-desktop
+    brave
 
     rhythmbox
     libgpod
