@@ -61,6 +61,7 @@
     jetbrains.idea-ultimate
     telegram-desktop
     brave
+    code-cursor
 
     rhythmbox
     libgpod
