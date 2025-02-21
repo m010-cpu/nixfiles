@@ -127,6 +127,7 @@
     avalonia-ilspy
     volatility3
     (callPackage ./vol.nix {})
+    mitmproxy
 
     networkmanagerapplet
     pyprland
