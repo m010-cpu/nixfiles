@@ -62,6 +62,7 @@
     telegram-desktop
     brave
     code-cursor
+    lmstudio
 
     rhythmbox
     libgpod
