@@ -63,6 +63,7 @@
     brave
     code-cursor
     lmstudio
+    calibre
 
     rhythmbox
     libgpod
