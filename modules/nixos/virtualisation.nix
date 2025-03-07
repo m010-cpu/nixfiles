@@ -10,6 +10,8 @@
     };
 
     virtualbox.host.enable = true;
+
+    waydroid.enable = true;
   };
 
   users.groups.ubridge = {};
