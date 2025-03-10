@@ -64,6 +64,7 @@
     code-cursor
     lmstudio
     calibre
+    xfce.ristretto
 
     rhythmbox
     libgpod
