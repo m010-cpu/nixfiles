@@ -2,10 +2,8 @@
   pkgs,
   inputs,
   ...
-}:
-
-{
-  imports = [ inputs.arkenfox.hmModules.default ];
+}: {
+  imports = [inputs.arkenfox.hmModules.default];
 
   programs.firefox = {
     enable = true;
@@ -28,9 +26,9 @@
         x86_64-linux.tridactyl
       ];
 
-      extraConfig = ''
-        ${builtins.readFile ../../arkenfox/user.js}
-      '';
+      # extraConfig = ''
+      #   ${builtins.readFile ../../arkenfox/user.js}
+      # '';
 
       # arkenfox = {
       #   enable = true;
@@ -43,8 +41,6 @@
       #   };
       #
       # };
-
     };
-
   };
 }
