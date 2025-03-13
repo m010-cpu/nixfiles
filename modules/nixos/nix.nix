@@ -10,6 +10,7 @@
     ];
     trusted-public-keys = [
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+      "firefox.cachix.org-1:KUx0AH19j+CuV2s5npUQjLlsVbyO6120hZWuDvZaEcs="
     ];
   };
 
