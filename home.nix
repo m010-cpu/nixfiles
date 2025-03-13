@@ -89,6 +89,7 @@
     font-awesome
     mpd
     ffmpeg
+    cachix
 
     gcc
     gdb
