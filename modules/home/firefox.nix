@@ -7,7 +7,7 @@
 
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox;
+    package = pkgs.firefox-devedition;
 
     # arkenfox = {
     #   enable = true;
