@@ -15,7 +15,7 @@
     # };
 
     profiles.default = {
-      extensions = with inputs.firefox-addons.packages; [
+      extensions.packages = with inputs.firefox-addons.packages; [
         x86_64-linux.bitwarden
         x86_64-linux."2fas-two-factor-authentication"
         x86_64-linux.foxyproxy-standard
