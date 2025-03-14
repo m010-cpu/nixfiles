@@ -7,14 +7,14 @@
 
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox-devedition;
+    package = pkgs.firefox;
 
     # arkenfox = {
     #   enable = true;
     #   version = "128.0";
     # };
 
-    profiles.dev-edition-default = {
+    profiles.default = {
       extensions = with inputs.firefox-addons.packages; [
         x86_64-linux.bitwarden
         x86_64-linux."2fas-two-factor-authentication"
