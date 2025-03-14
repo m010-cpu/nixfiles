@@ -5,11 +5,11 @@
     stripRoot = false;
   };
   libfprint = pkgs.libfprint.overrideAttrs (attrs: {
-    version = "1.94.9";
+    version = "1.94.7";
     src = pkgs.fetchgit {
       url = "https://gitlab.freedesktop.org/libfprint/libfprint.git";
-      rev = "v1.94.9";
-      sha256 = "sha256-lDnAXWukBZSo8X6UEVR2nOMeVUi/ahnJgx2cP+vykZ8=";
+      rev = "v1.94.7";
+      sha256 = "sha256-OM26B9mQLNyjBKMgA3DMrvfWQ8K6aIaJLdiTXXMYvXA=";
     };
     patches =
       attrs.patches
