@@ -23,7 +23,7 @@
 
   # boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_hardened;
   boot.kernel.sysctl."net.ipv4.icmp_echo_ignore_broadcasts" = lib.mkDefault true;
-  boot.kernelModules = ["uinput"];
+  boot.kernelModules = ["kvm_intel" "uinput"];
   boot.kernelParams = [
     "slab_nomerge"
     "page_poison=1"
