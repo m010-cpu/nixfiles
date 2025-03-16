@@ -33,10 +33,10 @@
       inputs.hyprland.follows = "hyprland";
     };
 
-    wezterm = {
-      url = "github:wez/wezterm/main?dir=nix";
-      # inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # wezterm = {
+    #   url = "github:wez/wezterm/main?dir=nix";
+    #   # inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
