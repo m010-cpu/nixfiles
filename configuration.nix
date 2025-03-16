@@ -10,7 +10,7 @@
 
     ./modules/nixos/nix.nix
     ./modules/nixos/power.nix
-    ./modules/nixos/fingerprint.nix
+    # ./modules/nixos/fingerprint.nix
     ./modules/nixos/bluetooth.nix
     ./modules/nixos/audio.nix
     ./modules/nixos/virtualisation.nix
