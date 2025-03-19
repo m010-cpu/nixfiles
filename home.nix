@@ -95,6 +95,10 @@
     criterion
     libbpf
 
+    cargo
+    rustc
+    rustup
+
     usbutils
     hfsprogs
     inetutils
