@@ -94,9 +94,6 @@
     gdb
     criterion
     libbpf
-
-    cargo
-    rustc
     rustup
 
     usbutils
