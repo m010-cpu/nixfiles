@@ -63,6 +63,7 @@
     code-cursor
     lmstudio
     calibre
+    qemu
 
     gnome-disk-utility
     gnome-calculator
