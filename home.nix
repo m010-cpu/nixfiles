@@ -63,7 +63,12 @@
     code-cursor
     lmstudio
     calibre
+
+    gnome-disk-utility
+    gnome-calculator
+    gnome-usage
     xfce.ristretto
+    xfce.tumbler
 
     rhythmbox
     libgpod
