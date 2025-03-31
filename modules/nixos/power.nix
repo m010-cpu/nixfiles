@@ -1,6 +1,12 @@
 {
   services.thermald.enable = true;
+
+  services.upower.enable = true;
+  services.power-profiles-daemon.enable = false;
+
   powerManagement.powertop.enable = true;
+
+  services.system76-scheduler.enable = true;
   services.system76-scheduler.settings.cfsProfiles.enable = true;
 
   services.tlp = {
