@@ -64,6 +64,7 @@
     lmstudio
     calibre
     qemu
+    vagrant
 
     gnome-disk-utility
     gnome-calculator
