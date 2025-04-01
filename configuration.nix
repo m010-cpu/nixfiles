@@ -48,6 +48,7 @@
       "networkmanager"
       "wheel"
       "docker"
+      "libvirtd"
       "vboxusers"
       "ubridge"
     ];

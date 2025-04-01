@@ -1,5 +1,12 @@
 {pkgs, ...}: {
+  programs.virt-manager.enable = true;
   virtualisation = {
+    libvirtd.enable = true;
+
+    virtualbox.host.enable = true;
+
+    waydroid.enable = true;
+
     docker = {
       enable = true;
       enableOnBoot = false;
@@ -8,10 +15,6 @@
         setSocketVariable = true;
       };
     };
-
-    virtualbox.host.enable = true;
-
-    waydroid.enable = true;
   };
 
   users.groups.ubridge = {};
@@ -22,10 +25,4 @@
     permissions = "u=rwx,g=rx,o=r";
     source = "${pkgs.ubridge}/bin/ubridge";
   };
-  # services.gns3-server = {
-  #   enable = true;
-  #   ubridge.enable = true;
-  #   dynamips.enable = true;
-  #   vpcs.enable = true;
-  # };
 }
