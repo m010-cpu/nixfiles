@@ -117,7 +117,6 @@ return {
         "--function-arg-placeholders",
         "--fallback-style=llvm",
         "--offset-encoding=utf-16",
-        "--compile-commands-dir=/nix/store/rda6nqzrbjsg0dkim6049gzijwraxnyj-linux-6.12.18-dev/lib/modules/6.12.18/build,",
       },
     })
 
