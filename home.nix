@@ -13,7 +13,7 @@
     ./modules/home/vscode.nix
     ./modules/home/notion.nix
     ./modules/home/rofi.nix
-    ./modules/home/waybar.nix
+    # ./modules/home/waybar.nix
     ./modules/home/zathura.nix
     ./modules/home/direnv.nix
     ./modules/home/spicetify.nix
