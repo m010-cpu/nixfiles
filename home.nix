@@ -65,6 +65,7 @@
     calibre
     qemu
     vagrant
+    cromite
 
     gnome-disk-utility
     gnome-calculator
