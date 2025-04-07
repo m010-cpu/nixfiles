@@ -65,6 +65,7 @@
     calibre
     qemu
     vagrant
+    brave
 
     gnome-disk-utility
     gnome-calculator
