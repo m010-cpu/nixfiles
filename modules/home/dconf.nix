@@ -4,7 +4,8 @@
     settings."org/gnome/shell" = {
       disable-user-extensions = false;
       enabled-extensions = with pkgs.gnomeExtensions; [
-        forge
+        system-monitor.extensionUuid
+        forge.extensionUuid
       ];
     };
   };
