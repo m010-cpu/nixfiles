@@ -72,9 +72,10 @@
     brave
     inputs.zen-browser.packages."${system}".twilight-official
 
-    gnome-disk-utility
-    gnome-calculator
-    gnome-usage
+    gnome-tweaks
+    # gnome-disk-utility
+    # gnome-calculator
+    # gnome-usage
     xfce.ristretto
     xfce.tumbler
 
