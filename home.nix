@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     ./modules/home/hyprland.nix
     ./modules/home/hypridle.nix
@@ -66,6 +70,7 @@
     qemu
     vagrant
     brave
+    inputs.zen-browser.packages."${system}".twilight-official
 
     gnome-disk-utility
     gnome-calculator
