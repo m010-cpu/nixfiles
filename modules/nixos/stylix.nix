@@ -17,7 +17,7 @@
     image = ../../wallpaper/paper.png;
     cursor.package = pkgs.bibata-cursors;
     cursor.name = "Bibata-Modern-Ice";
-    cursor.size = 5;
+    cursor.size = 10;
 
     fonts = {
       monospace = {

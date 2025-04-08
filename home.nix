@@ -22,6 +22,7 @@
     ./modules/home/direnv.nix
     ./modules/home/spicetify.nix
     # ./modules/home/opensnitch.nix
+    ./modules/home/dconf.nix
   ];
   home.username = "mo";
   home.homeDirectory = "/home/mo";
