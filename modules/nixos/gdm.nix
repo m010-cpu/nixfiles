@@ -7,17 +7,18 @@
       enable = true;
       wayland = true;
     };
+    desktopManager.gnome.enable = true;
   };
 
   xdg.portal = {
     enable = true;
     wlr.enable = true;
     xdgOpenUsePortal = true;
-    #config = {
-    #  common = {
-    #    default = ["gnome" "hyprland"];
-    #  };
-    #};
+    # config = {
+    #   common = {
+    #     default = ["gnome" "hyprland"];
+    #   };
+    # };
     configPackages = [
       pkgs.xdg-desktop-portal
       pkgs.xdg-desktop-portal-gnome
@@ -25,7 +26,6 @@
     ];
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
-      #pkgs.xdg-desktop-portal
     ];
   };
 }
