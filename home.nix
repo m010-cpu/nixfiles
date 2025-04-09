@@ -74,6 +74,8 @@
     inputs.zen-browser.packages."${system}".twilight-official
 
     gnome-tweaks
+    gnomeExtensions.system-monitor
+    gnomeExtensions.forge
     # gnome-disk-utility
     # gnome-calculator
     # gnome-usage

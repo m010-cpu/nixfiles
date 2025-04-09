@@ -45,6 +45,7 @@
       "format": " {}%"
     },
     "battery": {
+      "interval": 1,
       "bat": "BAT0",
       "states": {
         "warning": 30,
@@ -61,7 +62,7 @@
       "tooltip-format-wifi": "{essid} ({signalStrength}%)\n󰩟 {ipaddr}/{cidr}\n  {gwaddr}\n {bandwidthUpBits}\n {bandwidthDownBits}",
       "tooltip-format-ethernet": "{ifname}\n󰩟 {ipaddr}/{cidr}\n  {gwaddr}\n {bandwidthUpBits}\n {bandwidthDownBits}",
       "format-ethernet": "{ip}",
-      "on-click": "nmcli device wifi list",
+      "on-click": "rofi-network-manager",
       "on-scroll-up": "nmcli device wifi connect {ssid}",
       "on-scroll-down": "nmcli device disconnect {interface}",
       "interval": 30
