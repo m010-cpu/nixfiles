@@ -73,6 +73,9 @@
     brave
     inputs.zen-browser.packages."${system}".twilight-official
 
+    rofi-network-manager
+    rofi-bluetooth
+
     gnome-tweaks
     gnomeExtensions.system-monitor
     gnomeExtensions.forge
