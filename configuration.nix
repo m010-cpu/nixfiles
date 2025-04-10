@@ -16,6 +16,7 @@
     ./modules/nixos/virtualisation.nix
     ./modules/nixos/security.nix
     ./modules/nixos/ios.nix
+    ./modules/nixos/layout.nix
 
     ./modules/nixos/gdm.nix
     ./modules/nixos/stylix.nix

@@ -76,12 +76,17 @@
     rofi-network-manager
     rofi-bluetooth
 
-    gnome-tweaks
-    gnomeExtensions.system-monitor
-    gnomeExtensions.forge
+    # gnome-tweaks
+    # gnomeExtensions.system-monitor
+    # gnomeExtensions.forge
+
     # gnome-disk-utility
-    # gnome-calculator
-    # gnome-usage
+    gnome-calculator
+    gnome-calendar
+    gnome-disk-utility
+    gnome-usage
+    gnome-tecla
+
     xfce.ristretto
     xfce.tumbler
 
