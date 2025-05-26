@@ -157,6 +157,7 @@
     volatility3
     (callPackage ./vol.nix {})
     mitmproxy
+    exegol
 
     networkmanagerapplet
     pyprland

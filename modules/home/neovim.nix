@@ -25,6 +25,8 @@
       nixd
       asm-lsp
       sqls
+      vtsls
+      vscode-langservers-extracted
 
       asmfmt
       alejandra

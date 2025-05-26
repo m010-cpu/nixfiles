@@ -159,15 +159,38 @@ return {
       filetypes = { "go", "gomod" },
     })
 
-    -- nvim_lsp.sourcekit.setup({
-    --     on_attach = on_attach,
-    --     capabilities = capabilities,
-    -- })
-
     nvim_lsp.tailwindcss.setup({
       on_attach = on_attach,
+      cmd = { "vscode-eslint-language-server" },
       capabilities = capabilities,
     })
+
+    nvim_lsp.eslint.setup({
+      on_attach = on_attach,
+      -- on_attach = function(client, bufnr)
+      --   vim.api.nvim_create_autocmd("BufWritePre", {
+      --     buffer = bufnr,
+      --     command = "EslintFixAll",
+      --   })
+      -- end,
+      capabilities = capabilities,
+    })
+
+    -- nvim_lsp.vtsls.setup({
+    --   on_attach = on_attach,
+    --   capabilities = capabilities,
+    -- })
+
+    -- nvim_lsp.denols.setup({
+    --   on_attach = on_attach,
+    --   cmd = { "deno", "lsp" },
+    --   settings = {
+    --     deno = {
+    --       enable = true,
+    --     },
+    --   },
+    --   capabilities = capabilities,
+    -- })
 
     nvim_lsp.intelephense.setup({
       on_attach = on_attach,
