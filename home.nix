@@ -119,7 +119,8 @@
     gdb
     criterion
     libbpf
-    rustup
+    cargo
+    rustc
 
     usbutils
     hfsprogs
@@ -157,7 +158,6 @@
     volatility3
     (callPackage ./vol.nix {})
     mitmproxy
-    exegol
 
     networkmanagerapplet
     pyprland

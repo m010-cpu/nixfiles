@@ -65,6 +65,10 @@
     SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTR{idVendor}=="21a9", ATTR{idProduct}=="1006", MODE="0666"
   '';
 
+  services.nfs.server.enable = true;
+  networking.firewall.allowedTCPPorts = [2049];
+  networking.firewall.allowedUDPPorts = [2049];
+
   # OpenCL Driver
   hardware.graphics.extraPackages = with pkgs; [intel-ocl];
 
