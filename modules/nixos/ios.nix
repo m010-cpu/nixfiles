@@ -5,7 +5,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    libimobiledevice
+    # libimobiledevice broken
     idevicerestore
     ideviceinstaller
     ifuse
