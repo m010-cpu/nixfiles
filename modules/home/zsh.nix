@@ -48,7 +48,7 @@
     #   [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
     # '';
 
-    initExtra = ''
+    initContent = ''
       # Completions
 
       zstyle ':completion:*:git-checkout:*' sort false
