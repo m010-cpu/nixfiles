@@ -1,8 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
 
@@ -10,7 +6,7 @@
 
     ./modules/nixos/nix.nix
     ./modules/nixos/power.nix
-    # ./modules/nixos/fingerprint.nix
+    ./modules/nixos/fingerprint.nix
     ./modules/nixos/bluetooth.nix
     ./modules/nixos/audio.nix
     ./modules/nixos/virtualisation.nix
@@ -108,7 +104,6 @@
     zsh.enable = true;
     hyprland = {
       enable = true;
-      # package = inputs.hyprland.packages.${pkgs.system}.default;
     };
   };
 
