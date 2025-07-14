@@ -162,7 +162,6 @@
     networkmanagerapplet
     pyprland
     hyprpicker
-    hyprlandPlugins.hyprspace
     wl-clipboard-rs
     hyprshot
     brightnessctl

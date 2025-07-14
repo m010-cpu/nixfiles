@@ -11,6 +11,7 @@
       "https://firefox.cachix.org"
       "https://wezterm.cachix.org"
       "https://stylix.cachix.org"
+      "https://lanzaboote.cachix.org"
     ];
     trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
@@ -18,6 +19,7 @@
       "wezterm.cachix.org-1:kAbhjYUC9qvblTE+s7S+kl5XM1zVa4skO+E/1IDWdH0="
       "firefox.cachix.org-1:KUx0AH19j+CuV2s5npUQjLlsVbyO6120hZWuDvZaEcs="
       "stylix.cachix.org-1:iTycMb+viP8aTqhRDvV5qjs1jtNJKH9Jjvqyg4DYxhw="
+      "lanzaboote.cachix.org-1:Nt9//zGmqkg1k5iu+B3bkj3OmHKjSw9pvf3faffLLNk="
     ];
   };
 
