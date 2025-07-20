@@ -86,6 +86,7 @@
     gnome-disk-utility
     gnome-usage
     gnome-tecla
+    sushi
 
     xfce.ristretto
     xfce.tumbler
@@ -159,11 +160,12 @@
     (callPackage ./vol.nix {})
     mitmproxy
 
-    networkmanagerapplet
     pyprland
     hyprpicker
-    wl-clipboard-rs
     hyprshot
+    wl-clipboard-rs
+
+    networkmanagerapplet
     brightnessctl
     playerctl
   ];
