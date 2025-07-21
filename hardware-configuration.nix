@@ -20,7 +20,6 @@
     "dm-snapshot"
     "cryptd"
     "thinkpad-acpi"
-    "acpi-call"
   ];
 
   # boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_hardened;
