@@ -78,6 +78,9 @@
 
   # Authentication
   services.gnome.gnome-keyring.enable = true;
+
+  security.pam.services.login.enableGnomeKeyring = true;
+
   security.pam.services.swaylock = {};
   security.pam.services.swaylock.fprintAuth = true;
 
@@ -110,6 +113,7 @@
 
   # Environment
   environment.sessionVariables = {
+    NIXPKGS_ALLOW_UNFREE = "1";
     NIXOS_OZONE_WL = "1";
     GDK_BACKEND = "wayland";
     CLUTTER_BACKEND = "wayland";
