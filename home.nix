@@ -4,6 +4,7 @@
   ...
 }: {
   imports = [
+    ./modules/home/stylix.nix
     ./modules/home/hyprland.nix
     ./modules/home/hypridle.nix
     ./modules/home/swaylock.nix
@@ -24,6 +25,7 @@
     # ./modules/home/opensnitch.nix
     # ./modules/home/dconf.nix
   ];
+
   home.username = "mo";
   home.homeDirectory = "/home/mo";
 
@@ -32,12 +34,6 @@
   home.file = {
     ".config/nvim".source = ./nvim;
     ".config/hypr/pyprland.toml".source = ./hypr/pyprland.toml;
-  };
-
-  stylix = {
-    targets = {
-      neovim.enable = false;
-    };
   };
 
   home.packages = with pkgs; [
@@ -87,6 +83,8 @@
     gnome-usage
     gnome-tecla
     sushi
+    nautilus
+    seahorse
 
     xfce.ristretto
     xfce.tumbler

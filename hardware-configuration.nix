@@ -2,6 +2,7 @@
   config,
   lib,
   modulesPath,
+  pkgs,
   ...
 }: {
   imports = [
@@ -64,4 +65,10 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.enableAllFirmware = true;
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  # OpenCL Driver
+  hardware.graphics.extraPackages = with pkgs; [intel-ocl];
+
+  # Tablet Driver
+  hardware.opentabletdriver.enable = true;
 }
