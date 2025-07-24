@@ -57,7 +57,7 @@
     shell = pkgs.zsh;
   };
 
-  programs.enable.zsh = true;
+  programs.zsh.enable = true;
 
   services.nfs.server.enable = true;
   networking.firewall.allowedTCPPorts = [2049];
