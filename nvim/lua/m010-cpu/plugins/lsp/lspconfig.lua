@@ -197,6 +197,11 @@ return {
       capabilities = capabilities,
     })
 
+    nvim_lsp.texlab.setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+    })
+
     nvim_lsp.nixd.setup({
       on_attach = on_attach,
       capabilities = capabilities,

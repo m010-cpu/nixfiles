@@ -38,6 +38,12 @@
       pylint
       eslint_d
       sqlfluff
+
+      texliveMedium
+      biber
+      zathura
+      xdotool
+      pstree
     ];
   };
 }
