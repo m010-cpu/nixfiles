@@ -17,8 +17,10 @@
     ./modules/nixos/udev.nix
 
     ./modules/nixos/gdm.nix
-    ./modules/nixos/hyprland.nix
     ./modules/nixos/stylix.nix
+
+    # ./modules/nixos/hyprland.nix
+    ./modules/nixos/river.nix
 
     ./modules/home/starship.nix
     ./modules/nixos/appimage.nix

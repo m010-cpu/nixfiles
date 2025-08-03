@@ -1,5 +1,6 @@
 {pkgs, ...}: {
-  services.displayManager.defaultSession = "hyprland";
+  # services.displayManager.defaultSession = "hyprland";
+  services.displayManager.defaultSession = "river";
 
   services.xserver = {
     enable = true;

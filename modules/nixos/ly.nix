@@ -1,12 +1,8 @@
 {pkgs, ...}: {
   services.displayManager.defaultSession = "hyprland";
 
-  services.xserver = {
+  services.displayManager.ly = {
     enable = true;
-
-    displayManager.ly = {
-      enable = true;
-    };
   };
 
   xdg.portal = {
