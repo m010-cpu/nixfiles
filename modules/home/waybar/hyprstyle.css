@@ -1,5 +1,6 @@
 #waybar {
   border: 2px solid;
+  border-radius: 7px;
   /* border-color: #5f5e4e; */
   border-color: #878573;
 }

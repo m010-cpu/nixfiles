@@ -6,8 +6,8 @@
     "margin-right": 5,
     "margin-top": 5,
     "height": 36,
-    "modules-left": ["river/tags", "river/mode", "custom/spotify"],
-    "modules-center": ["river/window"],
+    "modules-left": ["hyprland/workspaces", "hyprland/mode", "custom/spotify"],
+    "modules-center": ["hyprland/window"],
     "modules-right": [
       "tray",
       "pulseaudio",
@@ -19,10 +19,16 @@
       "custom/notification",
       "clock"
     ],
-    "river/tags": {
-      "hide-vacant": true
+    "hyprland/workspaces": {
+      "disable-scroll": true,
+      "all-outputs": false,
+      "format": "{icon}",
+      "format-icons": {
+        "active": "",
+        "default": ""
+      }
     },
-    "river/mode": {
+    "hyprland/mode": {
       "format": "<span style=\"italic\">{}</span>"
     },
     "tray": {

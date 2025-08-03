@@ -5,8 +5,12 @@
 }: {
   imports = [
     ./modules/home/stylix.nix
-    ./modules/home/hyprland.nix
-    ./modules/home/hypridle.nix
+
+    # ./modules/home/hyprland.nix
+    # ./modules/home/hypridle.nix
+
+    ./modules/home/river.nix
+
     ./modules/home/swaylock.nix
     ./modules/home/zsh.nix
     ./modules/home/wezterm.nix
@@ -157,11 +161,6 @@
     volatility3
     (callPackage ./vol.nix {})
     mitmproxy
-
-    pyprland
-    hyprpicker
-    hyprshot
-    wl-clipboard-rs
 
     networkmanagerapplet
     brightnessctl

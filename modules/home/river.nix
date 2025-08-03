@@ -1,4 +1,8 @@
 {
+  pkgs,
+  config,
+  ...
+}: {
   wayland.windowManager.river = {
     enable = true;
     xwayland.enable = false;
@@ -6,7 +10,35 @@
     systemd.variables = ["--all"];
 
     extraConfig = ''
-      set $mod Mod4
+      #!/bin/sh
+
+      # Set background and border color
+      # -m [ stretch | fill | fit | center | tile ]
+      ${pkgs.swaybg}/bin/swaybg -i ${config.stylix.image} &
+      riverctl border-width 2
+      riverctl focus-follows-cursor always
+      riverctl set-cursor-warp on-focus-change
+
+      # Set keyboard repeat rate
+      riverctl set-repeat 50 300
+
+      # Make all views with an app-id that starts with "float" and title "foo" start floating.
+      riverctl rule-add -app-id 'float*' -title 'foo' float
+      riverctl rule-add -app-id '*' ssd
+
+      riverctl default-layout filtile
+      filtile \
+        --output DP-3 view-padding 1 outer-padding 2 \
+        --output DP-3 smart-padding-h 320 &
+        --output HDMI-A-1 view-padding 1 outer-padding 2 \
+        --output HDMI-A-1 smart-padding-h 320 &
+
+      riverctl input pointer-1267-12691-ELAN06C6:00_04F3:3193_Touchpad natural-scroll enabled
+      riverctl input pointer-1267-12691-ELAN06C6:00_04F3:3193_Touchpad tap enabled
+      riverctl input pointer-1267-12691-ELAN06C6:00_04F3:3193_Touchpad tap-button-map left-right-middle
+      riverctl input pointer-1267-12691-ELAN06C6:00_04F3:3193_Touchpad scroll-method two-finger
+
+      riverctl input pointer-2-10-TPPS/2_Elan_TrackPoint pointer-accel -0.55
 
       ### Autostart
       riverctl spawn waybar
@@ -15,50 +47,59 @@
       riverctl spawn rivertile
 
       ### Scratchpad Tags
-      scratchpad_bitwarden=$((1 << 20))
-      scratchpad_nautilus=$((1 << 21))
-      riverctl spawn-tagmask $(((1 << 32) - 1) ^ $scratchpad_bitwarden)
+      for i in $(seq 1 9)
+      do
+          tags=$((1 << ($i - 1)))
 
-      # Bitwarden scratchpad
-      riverctl map normal $mod+Shift B spawn bitwarden
-      riverctl map normal $mod B toggle-focused-tags $scratchpad_bitwarden
-      riverctl rule-add app-id "Bitwarden" float
+          # Mod+[1-9] to focus tag [0-8]
+          riverctl map normal Super $i set-focused-tags $tags
 
-      # Nautilus scratchpad
-      riverctl map normal $mod+Shift E spawn nautilus
-      riverctl map normal $mod E toggle-focused-tags $scratchpad_nautilus
-      riverctl rule-add app-id "Nautilus" float
+          # Mod+Shift+[1-9] to tag focused view with tag [0-8]
+          riverctl map normal Super+Shift $i set-view-tags $tags
+
+          # Mod+Ctrl+[1-9] to toggle focus of tag [0-8]
+          riverctl map normal Super+Control $i toggle-focused-tags $tags
+
+          # Mod+Shift+Ctrl+[1-9] to toggle tag [0-8] of focused view
+          riverctl map normal Super+Shift+Control $i toggle-view-tags $tags
+      done
+
+      # Mod+0 to focus all tags
+      # Mod+Shift+0 to tag focused view with all tags
+      all_tags=$(((1 << 32) - 1))
+      riverctl map normal Super 0 set-focused-tags $all_tags
+      riverctl map normal Super+Shift 0 set-view-tags $all_tags
 
       ### Base apps
-      riverctl map normal $mod Q spawn wezterm
-      riverctl map normal $mod Return spawn wezterm
-      riverctl map normal $mod D spawn "rofi -show drun"
-      riverctl map normal $mod L spawn swaylock
-      riverctl map normal $mod C close
-      riverctl map normal $mod M exit
-      riverctl map normal $mod V toggle-float
+      riverctl map normal Super Q spawn wezterm
+      riverctl map normal Super Return spawn wezterm
+      riverctl map normal Super D spawn "rofi -show drun"
+      riverctl map normal Super L spawn swaylock
+      riverctl map normal Super C close
+      riverctl map normal Super M exit
+      riverctl map normal Super V toggle-float
 
       ### Window movement
-      riverctl map normal $mod+Control H focus-view left
-      riverctl map normal $mod+Control L focus-view right
-      riverctl map normal $mod+Control K focus-view up
-      riverctl map normal $mod+Control J focus-view down
+      riverctl map normal Super+Control H focus-view left
+      riverctl map normal Super+Control L focus-view right
+      riverctl map normal Super+Control K focus-view up
+      riverctl map normal Super+Control J focus-view down
 
-      riverctl map normal $mod+Shift H move-view left 100
-      riverctl map normal $mod+Shift L move-view right 100
-      riverctl map normal $mod+Shift K move-view up 100
-      riverctl map normal $mod+Shift J move-view down 100
+      riverctl map normal Super+Shift H move-view left 100
+      riverctl map normal Super+Shift L move-view right 100
+      riverctl map normal Super+Shift K move-view up 100
+      riverctl map normal Super+Shift J move-view down 100
 
       ### Fullscreen
-      riverctl map normal $mod+Control F toggle-fullscreen
+      riverctl map normal Super+Control F toggle-fullscreen
 
       ### Screenshots
-      # riverctl map normal od+Control 3 spawn 'grim -o $(swaymsg -t get_outputs | jq -r ".[] | select(.focused).name") ~/Pictures/screenshot.png'
-      # riverctl map normal $mod+Control 4 spawn 'grim -g "$(slurp)" ~/Pictures/screenshot.png'
+      riverctl map normal Super+Control 3 spawn 'grim -g "$(slurp)" - | wl-copy --type image/png'
+      riverctl map normal Super+Control 4 spawn 'f=~/Pictures/ss_$(date +%F_%T | tr : -).png; grim -g "$(slurp)" "$f" && wl-copy --type image/png < "$f"'
 
       ### Mouse drag / resize
-      riverctl map-pointer normal $mod BTN_LEFT move-view
-      riverctl map-pointer normal $mod BTN_RIGHT resize-view
+      riverctl map-pointer normal Super BTN_LEFT move-view
+      riverctl map-pointer normal Super BTN_RIGHT resize-view
 
       ### Media keys
       riverctl map normal None XF86AudioRaiseVolume spawn 'wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+'
@@ -71,9 +112,9 @@
       riverctl map normal None XF86AudioPrev spawn 'playerctl previous'
       riverctl map normal None XF86AudioPause spawn 'playerctl play-pause'
       riverctl map normal None XF86AudioPlay spawn 'playerctl play-pause'
-      riverctl map normal $mod+Shift Right spawn 'playerctl next'
-      riverctl map normal $mod+Shift Down spawn 'playerctl play-pause'
-      riverctl map normal $mod+Shift Left spawn 'playerctl previous'
+      riverctl map normal Super+Shift Right spawn 'playerctl next'
+      riverctl map normal Super+Shift Down spawn 'playerctl play-pause'
+      riverctl map normal Super+Shift Left spawn 'playerctl previous'
     '';
   };
 }

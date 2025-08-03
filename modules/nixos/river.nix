@@ -1,7 +1,17 @@
-{
+{pkgs, ...}: {
   programs.river = {
     enable = true;
     xwayland.enable = false;
+    extraPackages = with pkgs; [
+      river-filtile
+      swaybg
+      grim
+      slurp
+
+      wl-clipboard-rs
+      wl-color-picker
+      wlr-randr
+    ];
   };
 
   environment.sessionVariables = {

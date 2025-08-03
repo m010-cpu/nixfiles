@@ -1,5 +1,12 @@
-{
+{pkgs, ...}: {
   programs.hyprland.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    pyprland
+    wl-clipboard-rs
+    hyprpicker
+    hyprshot
+  ];
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
