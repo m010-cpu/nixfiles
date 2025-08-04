@@ -3,6 +3,29 @@
   config,
   ...
 }: {
+  services.fusuma = {
+    enable = true;
+    extraPackages = with pkgs; [coreutils wtype];
+    settings = {
+      threshold = {
+        swipe = 0.1;
+      };
+      interval = {
+        swipe = 0.7;
+      };
+      swipe = {
+        "3" = {
+          left = {
+            command = "wtype -M ctrl -M logo -k right -m logo -m ctrl";
+          };
+          right = {
+            command = "wtype -M ctrl -M logo -k left -m logo -m ctrl";
+          };
+        };
+      };
+    };
+  };
+
   wayland.windowManager.river = {
     enable = true;
     xwayland.enable = false;
@@ -37,13 +60,14 @@
       riverctl input pointer-1267-12691-ELAN06C6:00_04F3:3193_Touchpad tap enabled
       riverctl input pointer-1267-12691-ELAN06C6:00_04F3:3193_Touchpad tap-button-map left-right-middle
       riverctl input pointer-1267-12691-ELAN06C6:00_04F3:3193_Touchpad scroll-method two-finger
+      riverctl input pointer-1267-12691-ELAN06C6:00_04F3:3193_Touchpad pointer-accel 0.7
 
       riverctl input pointer-2-10-TPPS/2_Elan_TrackPoint pointer-accel -0.55
 
       ### Autostart
       riverctl spawn waybar
       riverctl spawn fcitx5
-      riverctl spawn gammastep -l 48.85:2.35
+      riverctl spawn 'gammastep -l 48.85:2.35'
       riverctl spawn rivertile
 
       ### Scratchpad Tags
@@ -51,17 +75,14 @@
       do
           tags=$((1 << ($i - 1)))
 
-          # Mod+[1-9] to focus tag [0-8]
           riverctl map normal Super $i set-focused-tags $tags
 
-          # Mod+Shift+[1-9] to tag focused view with tag [0-8]
           riverctl map normal Super+Shift $i set-view-tags $tags
 
-          # Mod+Ctrl+[1-9] to toggle focus of tag [0-8]
-          riverctl map normal Super+Control $i toggle-focused-tags $tags
-
-          # Mod+Shift+Ctrl+[1-9] to toggle tag [0-8] of focused view
           riverctl map normal Super+Shift+Control $i toggle-view-tags $tags
+
+          riverctl map normal Super+Control LEFT spawn
+          riverctl map normal Super+Control RIGHT set-focused-tags $($i - 1)
       done
 
       # Mod+0 to focus all tags
@@ -73,11 +94,15 @@
       ### Base apps
       riverctl map normal Super Q spawn wezterm
       riverctl map normal Super Return spawn wezterm
-      riverctl map normal Super D spawn "rofi -show drun"
+      riverctl map normal Super D spawn 'rofi -show drun'
       riverctl map normal Super L spawn swaylock
       riverctl map normal Super C close
       riverctl map normal Super M exit
       riverctl map normal Super V toggle-float
+
+      ### Workspace movement
+      riverctl map normal Super+Control Left spawn 'flow cycle-tags previous 9'
+      riverctl map normal Super+Control Right spawn 'flow cycle-tags next 9'
 
       ### Window movement
       riverctl map normal Super+Control H focus-view left

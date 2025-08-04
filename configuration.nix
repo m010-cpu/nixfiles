@@ -55,6 +55,7 @@
       "libvirtd"
       "vboxusers"
       "ubridge"
+      "input"
     ];
     shell = pkgs.zsh;
   };

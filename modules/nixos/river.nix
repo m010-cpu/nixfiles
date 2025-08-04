@@ -11,6 +11,20 @@
       wl-clipboard-rs
       wl-color-picker
       wlr-randr
+
+      (pkgs.rustPlatform.buildRustPackage rec {
+        pname = "flow";
+        version = "v0.2.0";
+
+        src = pkgs.fetchFromGitHub {
+          owner = "stefur";
+          repo = "flow";
+          rev = version;
+          hash = "sha256-VVM6EuefMWlB3B6XUiGwx8MTmEIhPykLw0erdK1A5sE=";
+        };
+
+        cargoLock.lockFile = "${src}/Cargo.lock";
+      })
     ];
   };
 

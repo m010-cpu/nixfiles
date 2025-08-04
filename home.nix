@@ -108,6 +108,7 @@
     spotdl
     fastfetch
     powertop
+    powerstat
     openssl
     bat
     gh
@@ -117,6 +118,7 @@
     mpd
     ffmpeg
     cachix
+    htop
 
     gcc
     gdb

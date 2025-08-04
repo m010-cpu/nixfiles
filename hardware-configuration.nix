@@ -27,6 +27,8 @@
   boot.kernel.sysctl."net.ipv4.icmp_echo_ignore_broadcasts" = lib.mkDefault true;
   boot.kernelModules = ["uinput"];
   boot.kernelParams = [
+    "quiet"
+    "splash"
     "slab_nomerge"
     "page_poison=1"
     "page_alloc.shuffle=1"
