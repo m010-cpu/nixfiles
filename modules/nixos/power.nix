@@ -3,8 +3,8 @@
 
   services.power-profiles-daemon.enable = false;
 
-  # services.upower.enable = true;
-  # services.thermald.enable = true;
+  services.upower.enable = true;
+  services.thermald.enable = true;
 
   # services.system76-scheduler.enable = true;
   # services.system76-scheduler.settings.cfsProfiles.enable = true;
