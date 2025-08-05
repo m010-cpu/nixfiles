@@ -26,7 +26,7 @@
     ./modules/home/zathura.nix
     ./modules/home/direnv.nix
     ./modules/home/spicetify.nix
-    # ./modules/home/opensnitch.nix
+    ./modules/home/opensnitch.nix
     # ./modules/home/dconf.nix
   ];
 
@@ -61,7 +61,6 @@
     rnote
     parabolic
     ungoogled-chromium
-    opensnitch-ui
     libreoffice
     jetbrains.idea-ultimate
     telegram-desktop
@@ -119,6 +118,7 @@
     ffmpeg
     cachix
     htop
+    clamav
 
     gcc
     gdb
