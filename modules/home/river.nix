@@ -49,12 +49,14 @@
       riverctl rule-add -app-id 'float*' -title 'foo' float
       riverctl rule-add -app-id '*' ssd
 
-      riverctl default-layout filtile
-      filtile \
-        --output DP-3 view-padding 1 outer-padding 2 \
-        --output DP-3 smart-padding-h 320 &
-        --output HDMI-A-1 view-padding 1 outer-padding 2 \
-        --output HDMI-A-1 smart-padding-h 320 &
+      riverctl default-layout rivertile
+      riverctl spawn 'rivertile -view-padding 4 -outer-padding 2'
+
+      # filtile \
+      #   --output DP-3 view-padding 1 outer-padding 2 \
+      #   --output DP-3 smart-padding-h 320 &
+      #   --output HDMI-A-1 view-padding 1 outer-padding 2 \
+      #   --output HDMI-A-1 smart-padding-h 320 &
 
       riverctl input pointer-1267-12691-ELAN06C6:00_04F3:3193_Touchpad natural-scroll enabled
       riverctl input pointer-1267-12691-ELAN06C6:00_04F3:3193_Touchpad tap enabled
@@ -68,7 +70,6 @@
       riverctl spawn waybar
       riverctl spawn fcitx5
       riverctl spawn 'gammastep -l 48.85:2.35'
-      riverctl spawn rivertile
 
       ### Scratchpad Tags
       for i in $(seq 1 9)
