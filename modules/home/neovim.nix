@@ -39,7 +39,9 @@
       eslint_d
       sqlfluff
 
-      texliveMedium
+      (pkgs.texlive.combine {
+        inherit (pkgs.texlive) scheme-full;
+      })
       biber
       zathura
       xdotool

@@ -71,6 +71,7 @@
     vagrant
     brave
     inputs.zen-browser.packages."${system}".twilight-official
+    ivpn
 
     rofi-network-manager
     rofi-bluetooth
