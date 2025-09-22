@@ -15,13 +15,25 @@
 
   xdg.portal = {
     enable = true;
-    wlr.enable = true;
     xdgOpenUsePortal = true;
+
+    wlr = {
+      enable = true;
+      settings = {
+        screencast = {
+          # chooser_type = "dmenu";
+          # chooser_cmd = "${pkgs.bemenu}/bin/bemenu";
+          chooser_type = "dmenu";
+          chooser_cmd = "${pkgs.rofi-wayland}/bin/rofi -dmenu";
+        };
+      };
+    };
 
     configPackages = [
       pkgs.xdg-desktop-portal
-      pkgs.xdg-desktop-portal-gnome
-      pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-wlr
+      pkgs.xdg-desktop-portal-gtk
+      # pkgs.xdg-desktop-portal-hyprland
     ];
 
     extraPortals = [

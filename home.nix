@@ -72,6 +72,7 @@
     brave
     inputs.zen-browser.packages."${system}".twilight-official
     ivpn
+    ente-auth
 
     rofi-network-manager
     rofi-bluetooth
@@ -120,6 +121,8 @@
     cachix
     htop
     clamav
+    whois
+    dig
 
     gcc
     gdb
@@ -128,6 +131,7 @@
     cargo
     rustc
 
+    nmap
     usbutils
     hfsprogs
     inetutils

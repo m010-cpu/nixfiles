@@ -36,5 +36,7 @@
     QT_AUTO_SCREEN_SCALE_FACTOR = "1";
     SDL_VIDEODRIVER = "wayland";
     XDG_SESSION_TYPE = "wayland";
+    XDG_CURRENT_DESKTOP = "river";
+    XDG_SESSION_DESKTOP = "river";
   };
 }
