@@ -1,13 +1,13 @@
 {
   "mainBar": {
-    "layer": "top",
+    "layer": "bottom",
     "position": "top",
+    "exclusive": true,
     "margin-left": 5,
     "margin-right": 5,
     "margin-top": 5,
     "height": 36,
     "modules-left": ["river/tags", "river/mode", "custom/spotify"],
-    "modules-center": ["river/window"],
     "modules-right": [
       "tray",
       "pulseaudio",
@@ -21,9 +21,6 @@
     ],
     "river/tags": {
       "hide-vacant": true
-    },
-    "river/mode": {
-      "format": "<span style=\"italic\">{}</span>"
     },
     "tray": {
       "spacing": 10
