@@ -1,7 +1,7 @@
 {
   security.polkit.enable = true;
 
-  services.opensnitch.enable = true;
+  # services.opensnitch.enable = true;
 
   # services.clamav = {
   #   daemon = {

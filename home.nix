@@ -26,7 +26,7 @@
     ./modules/home/zathura.nix
     ./modules/home/direnv.nix
     ./modules/home/spicetify.nix
-    ./modules/home/opensnitch.nix
+    # ./modules/home/opensnitch.nix
     # ./modules/home/dconf.nix
   ];
 
@@ -57,7 +57,7 @@
     anki
     teams-for-linux
     zoom-us
-    wechat-uos
+    wechat
     rnote
     parabolic
     ungoogled-chromium
@@ -155,6 +155,8 @@
     foremost
     pngcheck
     ghidra
+    # ida-free
+    binaryninja-free
     radare2
     pkcrack
     bkcrack
@@ -167,6 +169,7 @@
     avalonia-ilspy
     volatility3
     (callPackage ./vol.nix {})
+    (callPackage ./gdsdecomp.nix {})
     mitmproxy
 
     networkmanagerapplet
