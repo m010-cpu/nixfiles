@@ -107,6 +107,7 @@
     dynamips
 
     git
+    git-lfs
     wget
     yt-dlp
     spotdl
