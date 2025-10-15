@@ -15,7 +15,7 @@ in
     desktopItem = pkgs.makeDesktopItem {
       name = "ida-pro";
       exec = "ida";
-      icon = ../share/appico.png;
+      icon = ./appico.png;
       comment = meta.description;
       desktopName = "IDA Pro";
       genericName = "Interactive Disassembler";
