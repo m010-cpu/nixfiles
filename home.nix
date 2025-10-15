@@ -73,6 +73,9 @@
     inputs.zen-browser.packages."${system}".twilight-official
     ivpn
     ente-auth
+    openvpn
+    transmission_4
+    onlyoffice-desktopeditors
 
     rofi-network-manager
     rofi-bluetooth
@@ -140,6 +143,7 @@
     evtest
     ripgrep
     fd
+    zip
     unzip
     bc
     file
@@ -154,8 +158,19 @@
     testdisk
     foremost
     pngcheck
-    ghidra
-    # ida-free
+    # Fix Nonparenting WM
+    (ghidra.overrideAttrs (oldAttrs: {
+      postFixup = ''
+        mkdir -p "$out/bin"
+        ln -s "$out/lib/ghidra/ghidraRun" "$out/bin/ghidra"
+        ln -s "$out/lib/ghidra/support/analyzeHeadless" "$out/bin/ghidra-analyzeHeadless"
+
+        wrapProgram "$out/lib/ghidra/support/launch.sh" \
+          --set-default NIX_GHIDRAHOME "$out/lib/ghidra/Ghidra" \
+          --set _JAVA_AWT_WM_NONREPARENTING 1 \
+          --prefix PATH : ${lib.makeBinPath [openjdk21]}
+      '';
+    }))
     binaryninja-free
     radare2
     pkcrack
@@ -168,9 +183,18 @@
     ilspycmd
     avalonia-ilspy
     volatility3
-    (callPackage ./vol.nix {})
-    (callPackage ./gdsdecomp.nix {})
+    (callPackage ./custom/vol.nix {})
+    (callPackage ./custom/gdsdecomp.nix {})
+    (callPackage ./custom/ida-pro/ida-pro.nix {
+      # runfile = builtins.path {
+      #   path = ./custom/ida-pro/idapro_92_x64linux.run;
+      #   name = "idapro_90_x64linux.run";
+      # };
+
+      runfile = /nix/store/lrdbfymfpv633532pf6zx4hjngiy7gih-ida-pro_92_x64linux.run;
+    })
     mitmproxy
+    wabt
 
     networkmanagerapplet
     brightnessctl
