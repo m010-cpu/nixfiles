@@ -99,6 +99,8 @@ in
       $(cat $NIX_CC/nix-support/dynamic-linker) $src \
         --mode unattended --debuglevel 4 --prefix $IDADIR
 
+      ${pythonForIDA}/bin/python ${./patch.py} $IDADIR/idapro.hexlic $IDADIR/libida.so $IDADIR/libida32.so
+
       # Link the exported libraries to the output.
       for lib in $IDADIR/*.so $IDADIR/*.so.6; do
         ln -s $lib $out/lib/$(basename $lib)
@@ -107,7 +109,7 @@ in
       # Manually patch libraries that dlopen stuff.
       patchelf --add-needed libpython3.13.so $out/lib/libida.so
       patchelf --add-needed libcrypto.so $out/lib/libida.so
-      patchelf --add-needed libsecret-1.so.0 $out/lib/libida.so
+
 
       # Some libraries come with the installer.
       addAutoPatchelfSearchPath $IDADIR
