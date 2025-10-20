@@ -20,7 +20,8 @@
     ./modules/nixos/stylix.nix
 
     # ./modules/nixos/hyprland.nix
-    ./modules/nixos/river.nix
+    # ./modules/nixos/river.nix
+    ./modules/nixos/sway.nix
 
     ./modules/home/starship.nix
     ./modules/nixos/appimage.nix

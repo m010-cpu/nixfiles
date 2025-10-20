@@ -8,8 +8,8 @@
 
     # ./modules/home/hyprland.nix
     # ./modules/home/hypridle.nix
-
-    ./modules/home/river.nix
+    # ./modules/home/river.nix
+    ./modules/home/sway.nix
 
     ./modules/home/swaylock.nix
     ./modules/home/zsh.nix
@@ -37,7 +37,7 @@
 
   home.file = {
     ".config/nvim".source = ./nvim;
-    ".config/hypr/pyprland.toml".source = ./hypr/pyprland.toml;
+    # ".config/hypr/pyprland.toml".source = ./hypr/pyprland.toml;
   };
 
   home.packages = with pkgs; [
