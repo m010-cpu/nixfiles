@@ -8,8 +8,8 @@
 
     # ./modules/home/hyprland.nix
     # ./modules/home/hypridle.nix
-    # ./modules/home/river.nix
-    ./modules/home/sway.nix
+    ./modules/home/river.nix
+    # ./modules/home/sway.nix
 
     ./modules/home/swaylock.nix
     ./modules/home/zsh.nix

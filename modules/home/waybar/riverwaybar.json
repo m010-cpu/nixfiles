@@ -1,0 +1,98 @@
+{
+  "mainBar": {
+    "layer": "bottom",
+    "position": "top",
+    "exclusive": true,
+    "margin-left": 5,
+    "margin-right": 5,
+    "margin-top": 5,
+    "height": 36,
+    "modules-left": ["river/tags", "river/mode", "custom/spotify"],
+    "modules-right": [
+      "tray",
+      "pulseaudio",
+      "disk",
+      "memory",
+      "cpu",
+      "battery",
+      "network",
+      "custom/notification",
+      "clock"
+    ],
+    "river/tags": {
+      "hide-vacant": true
+    },
+    "tray": {
+      "spacing": 10
+    },
+    "clock": {
+      "format-alt": "{:%Y-%m-%d}"
+    },
+    "disk": {
+      "format": "󰻂 {free}",
+      "interval": 60
+    },
+    "cpu": {
+      "format": " {usage}%"
+    },
+    "memory": {
+      "format": " {}%"
+    },
+    "battery": {
+      "interval": 1,
+      "bat": "BAT0",
+      "states": {
+        "warning": 30,
+        "critical": 15
+      },
+      "format": "{icon} {capacity}%",
+      "format-icons": ["", "", "", "", ""],
+      "format-charging": " {capacity}%"
+    },
+    "network": {
+      "format-wifi": "",
+      "format-ethernet": "",
+      "format-disconnected": "󱘖",
+      "tooltip-format-wifi": "{essid} ({signalStrength}%)\n󰩟 {ipaddr}/{cidr}\n  {gwaddr}\n {bandwidthUpBits}\n {bandwidthDownBits}",
+      "tooltip-format-ethernet": "{ifname}\n󰩟 {ipaddr}/{cidr}\n  {gwaddr}\n {bandwidthUpBits}\n {bandwidthDownBits}",
+      "format-ethernet": "{ip}",
+      "on-click": "rofi-network-manager",
+      "on-scroll-up": "nmcli device wifi connect {ssid}",
+      "on-scroll-down": "nmcli device disconnect {interface}",
+      "interval": 30
+    },
+    "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "format-bluetooth": "{icon} {volume}%",
+      "format-muted": "",
+      "format-icons": {
+        "headphones": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", ""]
+      },
+      "on-click": "pavucontrol"
+    },
+    "custom/notification": {
+      "tooltip": false,
+      "format": "{icon}",
+      "format-icons": {
+        "notification": "󱅫",
+        "none": "",
+        "dnd-notification": "",
+        "dnd-none": "󰂛",
+        "inhibited-notification": "",
+        "inhibited-none": "",
+        "dnd-inhibited-notification": "",
+        "dnd-inhibited-none": ""
+      },
+      "return-type": "json",
+      "exec-if": "which swaync-client",
+      "exec": "swaync-client -swb",
+      "on-click": "swaync-client -t -sw",
+      "on-click-right": "swaync-client -d -sw",
+      "escape": true
+    }
+  }
+}

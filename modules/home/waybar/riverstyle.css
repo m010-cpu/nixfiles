@@ -1,0 +1,29 @@
+#waybar {
+  border: 2px solid;
+  /* border-color: #5f5e4e; */
+  border-color: #878573;
+}
+
+#clock {
+  font-weight: bold;
+}
+
+#workspaces button {
+  color: #7d9726;
+  border: none;
+  border-bottom: none;
+  border-color: transparent;
+  outline: none;
+}
+
+#module-right > * {
+  padding-left: 5px;
+}
+
+#network {
+  font-family: "Font Awesome 6 Free";
+}
+
+#custom-notification {
+  font-family: "Font Awesome 6 Free";
+}
