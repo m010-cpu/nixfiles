@@ -8,12 +8,8 @@
   font-weight: bold;
 }
 
-#workspaces button {
-  color: #7d9726;
-  border: none;
-  border-bottom: none;
-  border-color: transparent;
-  outline: none;
+#tags button.focused label {
+  border-bottom: 3px solid #7d9726;
 }
 
 #module-right > * {
