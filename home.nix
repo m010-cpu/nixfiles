@@ -188,18 +188,7 @@
     volatility3
     (callPackage ./custom/vol.nix {})
     (callPackage ./custom/gdsdecomp.nix {})
-<<<<<<< HEAD
     (callPackage ./custom/ida-pro/ida-pro.nix {})
-=======
-    (callPackage ./custom/ida-pro/ida-pro.nix {
-      # runfile = builtins.path {
-      #   path = ./custom/ida-pro/idapro_92_x64linux.run;
-      #   name = "idapro_90_x64linux.run";
-      # };
-
-      runfile = /nix/store/lrdbfymfpv633532pf6zx4hjngiy7gih-ida-pro_92_x64linux.run;
-    })
->>>>>>> cc5bf69b86c206a365d557c48dd5cc5a97a814a8
     mitmproxy
     wabt
 
