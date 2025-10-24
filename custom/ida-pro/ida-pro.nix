@@ -1,6 +1,10 @@
 {
   pkgs,
   lib,
+<<<<<<< HEAD
+=======
+  runfile,
+>>>>>>> cc5bf69b86c206a365d557c48dd5cc5a97a814a8
   ...
 }: let
   pythonForIDA = pkgs.python313.withPackages (ps: with ps; [rpyc]);
@@ -9,7 +13,11 @@ in
     pname = "ida-pro";
     version = "9.2.0.250908";
 
+<<<<<<< HEAD
     src = ./ida-pro_92_x64linux.run;
+=======
+    src = runfile;
+>>>>>>> cc5bf69b86c206a365d557c48dd5cc5a97a814a8
 
     desktopItem = pkgs.makeDesktopItem {
       name = "ida-pro";
