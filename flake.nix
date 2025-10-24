@@ -3,8 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
-    # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     #nixos-hardware.url = "github:nixos/nixos-hardware/master";
 
     stylix = {
@@ -45,6 +44,7 @@
 
   outputs = inputs @ {
     nixpkgs,
+    nixpkgs-unstable,
     home-manager,
     ...
   }: {
@@ -53,6 +53,10 @@
         system = "x86_64-linux";
         specialArgs = {
           inherit inputs;
+          pkgs-unstable = import nixpkgs-unstable {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
         };
         modules = [
           ./configuration.nix
@@ -66,6 +70,10 @@
             home-manager.users.mo.imports = [./home.nix];
             home-manager.extraSpecialArgs = {
               inherit inputs;
+              pkgs-unstable = import nixpkgs-unstable {
+                system = "x86_64-linux";
+                config.allowUnfree = true;
+              };
             };
           }
         ];

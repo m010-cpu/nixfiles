@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-unstable,
   inputs,
   ...
 }: {
@@ -64,7 +65,8 @@
     libreoffice
     jetbrains.idea-ultimate
     telegram-desktop
-    code-cursor
+    pkgs-unstable.code-cursor
+
     lmstudio
     calibre
     qemu
