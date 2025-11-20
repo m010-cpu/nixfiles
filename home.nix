@@ -65,7 +65,10 @@
     libreoffice
     jetbrains.idea-ultimate
     telegram-desktop
+    kooha
+
     pkgs-unstable.code-cursor
+    pkgs-unstable.mpris-timer
 
     lmstudio
     calibre
@@ -78,6 +81,10 @@
     openvpn
     transmission_4
     onlyoffice-desktopeditors
+    (callPackage ./custom/traytimer.nix {
+      "gtk3" = pkgs.gtk3;
+      "libayatana-appindicator" = pkgs-unstable.libayatana-appindicator;
+    })
 
     rofi-network-manager
     rofi-bluetooth
@@ -191,6 +198,7 @@
     (callPackage ./custom/ida-pro/ida-pro.nix {})
     mitmproxy
     wabt
+    mgba
 
     networkmanagerapplet
     brightnessctl

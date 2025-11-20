@@ -63,6 +63,8 @@
 
   programs.zsh.enable = true;
 
+  programs.ssh.startAgent = true;
+
   services.nfs.server.enable = true;
   networking.firewall.allowedTCPPorts = [2049];
   networking.firewall.allowedUDPPorts = [2049];
