@@ -66,25 +66,22 @@
     jetbrains.idea-ultimate
     telegram-desktop
     kooha
-
-    pkgs-unstable.code-cursor
-    pkgs-unstable.mpris-timer
-
     lmstudio
     calibre
     qemu
     vagrant
     brave
-    inputs.zen-browser.packages."${system}".twilight-official
     ivpn
     ente-auth
     openvpn
     transmission_4
     onlyoffice-desktopeditors
-    (callPackage ./custom/traytimer.nix {
-      "gtk3" = pkgs.gtk3;
-      "libayatana-appindicator" = pkgs-unstable.libayatana-appindicator;
-    })
+
+    pkgs-unstable.code-cursor
+    pkgs-unstable.mpris-timer
+
+    inputs.zen-browser.packages."${system}".twilight-official
+    inputs.antigravity-nix.packages.x86_64-linux.default
 
     rofi-network-manager
     rofi-bluetooth
