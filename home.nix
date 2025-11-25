@@ -16,6 +16,7 @@
     ./modules/home/zsh.nix
     ./modules/home/wezterm.nix
     ./modules/home/gammastep.nix
+    ./modules/home/kanshi.nix
     # ./modules/home/mako.nix
     ./modules/home/swaync.nix
     ./modules/home/firefox.nix

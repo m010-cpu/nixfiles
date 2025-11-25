@@ -10,7 +10,9 @@
 
       wl-clipboard-rs
       wl-color-picker
+
       wlr-randr
+      kanshi
 
       (pkgs.rustPlatform.buildRustPackage rec {
         pname = "flow";

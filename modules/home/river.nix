@@ -119,6 +119,10 @@
       ### Fullscreen
       riverctl map normal Super+Control F toggle-fullscreen
 
+      ### Display Mode
+      riverctl map-switch normal lid open spawn 'kanshictl switch dock'
+      riverctl map-switch normal lid close spawn 'kanshictl switch clam'
+
       ### Screenshots
       riverctl map normal Super+Control 3 spawn 'grim -g "$(slurp)" - | wl-copy --type image/png'
       riverctl map normal Super+Control 4 spawn 'f=~/Pictures/ss_$(date +%F_%T | tr : -).png; grim -g "$(slurp)" "$f" && wl-copy --type image/png < "$f"'
