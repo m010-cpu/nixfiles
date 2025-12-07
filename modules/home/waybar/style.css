@@ -8,7 +8,7 @@
   font-weight: bold;
 }
 
-#tags button.focused label {
+#workspaces button.focused label {
   border-bottom: 3px solid #7d9726;
 }
 

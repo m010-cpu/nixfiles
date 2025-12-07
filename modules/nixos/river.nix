@@ -1,4 +1,6 @@
 {pkgs, ...}: {
+  services.displayManager.defaultSession = "river";
+
   programs.river = {
     enable = true;
     xwayland.enable = false;
@@ -27,6 +29,29 @@
 
         cargoLock.lockFile = "${src}/Cargo.lock";
       })
+    ];
+  };
+
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+
+    wlr = {
+      enable = true;
+      settings = {
+        screencast = {
+          # chooser_type = "dmenu";
+          # chooser_cmd = "${pkgs.bemenu}/bin/bemenu";
+          chooser_type = "dmenu";
+          chooser_cmd = "${pkgs.rofi}/bin/rofi -dmenu";
+        };
+      };
+    };
+
+    configPackages = [
+      pkgs.xdg-desktop-portal
+      pkgs.xdg-desktop-portal-wlr
+      pkgs.xdg-desktop-portal-gtk
     ];
   };
 

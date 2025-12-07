@@ -1,6 +1,4 @@
 {pkgs, ...}: {
-  services.displayManager.defaultSession = "hyprland";
-
   services.displayManager.ly = {
     enable = true;
   };
@@ -12,7 +10,6 @@
 
     configPackages = [
       pkgs.xdg-desktop-portal
-      pkgs.xdg-desktop-portal-hyprland
     ];
 
     extraPortals = [

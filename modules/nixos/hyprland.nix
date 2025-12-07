@@ -1,4 +1,6 @@
 {pkgs, ...}: {
+  services.displayManager.defaultSession = "hyprland";
+
   programs.hyprland.enable = true;
 
   environment.systemPackages = with pkgs; [

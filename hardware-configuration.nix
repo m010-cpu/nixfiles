@@ -9,6 +9,8 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
+  # boot.blacklistedKernelModules = ["thinkpad_acpi"];
+
   boot.initrd.availableKernelModules = [
     "xhci_pci"
     "thunderbolt"
@@ -20,7 +22,6 @@
   boot.initrd.kernelModules = [
     "dm-snapshot"
     "cryptd"
-    "thinkpad-acpi"
   ];
 
   # boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_hardened;
@@ -32,7 +33,8 @@
     "slab_nomerge"
     "page_poison=1"
     "page_alloc.shuffle=1"
-    "thinkpad_acpi.fan_control=1"
+    # "rfkill.master_switch_mode=1"
+    # "rfkill.default_state=0"
   ];
   boot.extraModulePackages = [];
 

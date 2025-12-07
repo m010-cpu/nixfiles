@@ -2,12 +2,12 @@
   description = "NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     #nixos-hardware.url = "github:nixos/nixos-hardware/master";
 
     stylix = {
-      url = "github:danth/stylix/release-25.05";
+      url = "github:danth/stylix/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -17,7 +17,12 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/release-25.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    terra-shell = {
+      url = "github:m010-cpu/terra-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -52,18 +57,34 @@
     nixpkgs-unstable,
     home-manager,
     ...
-  }: {
+  }: let
+    system = "x86_64-linux";
+    nixpkgsConfig = {
+      allowUnfree = true;
+      permittedInsecurePackages = [
+        "python-2.7.18.12"
+      ];
+    };
+  in {
     nixosConfigurations = {
       terra = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit system;
+
         specialArgs = {
           inherit inputs;
           pkgs-unstable = import nixpkgs-unstable {
-            system = "x86_64-linux";
-            config.allowUnfree = true;
+            inherit system;
+            config = nixpkgsConfig;
           };
         };
+
         modules = [
+          {
+            nixpkgs = {
+              config = nixpkgsConfig;
+            };
+          }
+
           ./configuration.nix
           #nixos-hardware.nixosModules.lenovo-thinkpad-e14-intel
           #inputs.hyprland.nixosModules.default

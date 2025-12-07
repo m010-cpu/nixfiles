@@ -20,7 +20,8 @@
       CPU_SCALING_GOVERNOR_ON_AC = "powersave";
       CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
 
-      DEVICES_TO_DISABLE_ON_STARTUP = "bluetooth";
+      RESTORE_DEVICE_STATE_ON_STARTUP = 1;
+      # DEVICES_TO_DISABLE_ON_STARTUP = "bluetooth";
     };
   };
 }

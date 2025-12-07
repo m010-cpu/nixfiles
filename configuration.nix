@@ -16,12 +16,15 @@
     ./modules/nixos/disk.nix
     ./modules/nixos/udev.nix
 
-    ./modules/nixos/gdm.nix
     ./modules/nixos/stylix.nix
 
+    ./modules/nixos/gdm.nix
+
     # ./modules/nixos/hyprland.nix
-    ./modules/nixos/river.nix
-    # ./modules/nixos/sway.nix
+    # ./modules/nixos/river.nix
+    ./modules/nixos/sway.nix
+    # ./modules/nixos/pantheon.nix
+    # ./modules/nixos/cosmic.nix
 
     ./modules/home/starship.nix
     ./modules/nixos/appimage.nix
@@ -63,7 +66,7 @@
 
   programs.zsh.enable = true;
 
-  programs.ssh.startAgent = true;
+  # programs.ssh.startAgent = true;
 
   services.nfs.server.enable = true;
   networking.firewall.allowedTCPPorts = [2049];
@@ -77,8 +80,7 @@
   # Packages
   environment.systemPackages = with pkgs; [
     efibootmgr
-    swaylock
   ];
 
-  system.stateVersion = "25.05";
+  system.stateVersion = "25.11";
 }

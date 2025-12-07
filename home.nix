@@ -9,8 +9,8 @@
 
     # ./modules/home/hyprland.nix
     # ./modules/home/hypridle.nix
-    ./modules/home/river.nix
-    # ./modules/home/sway.nix
+    # ./modules/home/river.nix
+    ./modules/home/sway.nix
 
     ./modules/home/swaylock.nix
     ./modules/home/zsh.nix
@@ -18,13 +18,13 @@
     ./modules/home/gammastep.nix
     ./modules/home/kanshi.nix
     # ./modules/home/mako.nix
-    ./modules/home/swaync.nix
+    # ./modules/home/swaync.nix
     ./modules/home/firefox.nix
     ./modules/home/neovim.nix
     ./modules/home/vscode.nix
     ./modules/home/notion.nix
     ./modules/home/rofi.nix
-    ./modules/home/waybar.nix
+    # ./modules/home/waybar.nix
     ./modules/home/zathura.nix
     ./modules/home/direnv.nix
     ./modules/home/spicetify.nix
@@ -43,6 +43,16 @@
   };
 
   home.packages = with pkgs; [
+    inputs.terra-shell.packages.${system}.default
+    inputs.zen-browser.packages.${system}.twilight-official
+    inputs.antigravity-nix.packages.x86_64-linux.default
+
+    pkgs-unstable.code-cursor
+    pkgs-unstable.mpris-timer
+
+    adwaita-icon-theme
+    adwaita-fonts
+
     alacritty
     thunderbird
     insomnia
@@ -52,7 +62,6 @@
     celluloid
     localsend
     bitwarden-desktop
-    goldwarden
     discord
     kicad
     xournalpp
@@ -78,12 +87,6 @@
     transmission_4
     onlyoffice-desktopeditors
 
-    pkgs-unstable.code-cursor
-    pkgs-unstable.mpris-timer
-
-    inputs.zen-browser.packages."${system}".twilight-official
-    inputs.antigravity-nix.packages.x86_64-linux.default
-
     rofi-network-manager
     rofi-bluetooth
 
@@ -91,7 +94,7 @@
     # gnomeExtensions.system-monitor
     # gnomeExtensions.forge
 
-    # gnome-disk-utility
+    gnome-disk-utility
     gnome-calculator
     gnome-calendar
     gnome-disk-utility
@@ -203,6 +206,6 @@
     playerctl
   ];
 
-  home.stateVersion = "25.05";
+  home.stateVersion = "25.11";
   programs.home-manager.enable = true;
 }
