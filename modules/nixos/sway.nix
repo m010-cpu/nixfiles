@@ -10,6 +10,7 @@
       swaybg
       grim
       slurp
+      normcap
 
       wl-clipboard-rs
       wl-color-picker

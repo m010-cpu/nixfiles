@@ -72,6 +72,7 @@
         "${config.wayland.windowManager.sway.config.modifier}+c" = "kill";
         "${config.wayland.windowManager.sway.config.modifier}+v" = "floating toggle";
 
+        "${config.wayland.windowManager.sway.config.modifier}+Ctrl+2" = "exec normcap";
         "${config.wayland.windowManager.sway.config.modifier}+Ctrl+3" = ''exec grim -g "$(slurp)" - | wl-copy --type image/png'';
         "${config.wayland.windowManager.sway.config.modifier}+Ctrl+4" = ''exec bash -c 'f=~/Pictures/ss_$(date +%F_%T | tr : -).png; grim -g "$(slurp)" "$f" && wl-copy --type image/png < "$f"' '';
 
