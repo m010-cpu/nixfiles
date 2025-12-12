@@ -45,8 +45,8 @@
   home.packages = with pkgs; [
     inputs.terra-shell.packages.${system}.default
     inputs.zen-browser.packages.${system}.twilight-official
-    inputs.antigravity-nix.packages.x86_64-linux.default
 
+    pkgs-unstable.antigravity
     pkgs-unstable.code-cursor
     pkgs-unstable.mpris-timer
 
