@@ -49,6 +49,8 @@
     pkgs-unstable.antigravity
     pkgs-unstable.code-cursor
     pkgs-unstable.mpris-timer
+    pkgs-unstable.bitwarden-desktop
+    pkgs-unstable.discord
 
     adwaita-icon-theme
     adwaita-fonts
@@ -61,8 +63,6 @@
     clapper
     celluloid
     localsend
-    bitwarden-desktop
-    discord
     kicad
     xournalpp
     anki
