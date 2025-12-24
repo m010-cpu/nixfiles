@@ -18,7 +18,7 @@
       tree-sitter
 
       texlab
-      pylyzer
+      pyright
       lua-language-server
       gopls
       clang-tools
@@ -27,6 +27,7 @@
       sqls
       vtsls
       vscode-langservers-extracted
+      intelephense
 
       asmfmt
       alejandra

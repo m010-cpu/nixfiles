@@ -6,9 +6,10 @@ return {
   event = { "BufReadPre", "BufNewFile" },
 
   config = function()
-    local nvim_lsp = require("lspconfig")
+    -- capabilities
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+    -- diagnostics
     vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
       underline = true,
       update_in_insert = false,
@@ -34,6 +35,7 @@ return {
       },
     })
 
+    -- format on save helper
     local augroup_format = vim.api.nvim_create_augroup("Format", { clear = true })
     local enable_format_on_save = function(_, bufnr)
       vim.api.nvim_clear_autocmds({ group = augroup_format, buffer = bufnr })
@@ -46,15 +48,16 @@ return {
       })
     end
 
+    -- on_attach
     local on_attach = function(_, bufnr)
       local buf_set_keymap = vim.api.nvim_buf_set_keymap
-
       local opts = { noremap = true, silent = true }
 
       buf_set_keymap(bufnr, "n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
       buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
     end
 
+    -- completion item icons
     local protocol = require("vim.lsp.protocol")
     protocol.CompletionItemKind = {
       "", -- Text
@@ -63,7 +66,7 @@ return {
       "󰊕", -- Constructor
       "", -- Field
       "", -- Variable
-      "", -- Classi
+      "", -- Class
       "󰜰", -- Interface
       "󰏗", -- Module
       "", -- Property
@@ -84,7 +87,14 @@ return {
       "", -- TypeParameter
     }
 
-    nvim_lsp.lua_ls.setup({
+    -- global defaults for all servers
+    vim.lsp.config("*", {
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    -- lua_ls
+    vim.lsp.config("lua_ls", {
       on_attach = function(client, bufnr)
         on_attach(client, bufnr)
         enable_format_on_save(client, bufnr)
@@ -102,14 +112,13 @@ return {
       },
     })
 
-    nvim_lsp.asm_lsp.setup({
-      on_attach = on_attach,
-      capabilities = capabilities,
+    -- asm_lsp
+    vim.lsp.config("asm_lsp", {
       filetypes = { "asm", "s", "S", "vmasm" },
     })
 
-    nvim_lsp.clangd.setup({
-      on_attach = on_attach,
+    -- clangd
+    vim.lsp.config("clangd", {
       cmd = {
         "clangd",
         "--background-index",
@@ -122,11 +131,8 @@ return {
       },
     })
 
-    nvim_lsp.sqls.setup({
-      -- on_attach = function(client, bufnr)
-      -- 	require("sqls").on_attach(client, bufnr)
-      -- end,
-      on_attach = on_attach,
+    -- sqls
+    vim.lsp.config("sqls", {
       settings = {
         sqls = {
           connections = {
@@ -140,72 +146,56 @@ return {
       },
     })
 
-    -- nvim_lsp.tsserver.setup({
-    --     on_attach = on_attach,
-    --     filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-    --     cmd = { "typescript-language-server", "--stdio" },
-    --     capabilities = capabilities,
-    -- })
-
-    nvim_lsp.pylyzer.setup({
-      on_attach = on_attach,
-      capabilities = capabilities,
-    })
-
-    nvim_lsp.gopls.setup({
-      on_attach = on_attach,
-      capabilities = capabilities,
+    -- gopls
+    vim.lsp.config("gopls", {
       cmd = { "gopls", "serve" },
       filetypes = { "go", "gomod" },
     })
 
-    nvim_lsp.tailwindcss.setup({
-      on_attach = on_attach,
+    -- tailwindcss
+    vim.lsp.config("tailwindcss", {
       cmd = { "vscode-eslint-language-server" },
-      capabilities = capabilities,
     })
 
-    nvim_lsp.eslint.setup({
-      on_attach = on_attach,
+    -- eslint
+    vim.lsp.config("eslint", {
+      -- uncomment if you want EslintFixAll on save:
       -- on_attach = function(client, bufnr)
+      --   on_attach(client, bufnr)
       --   vim.api.nvim_create_autocmd("BufWritePre", {
       --     buffer = bufnr,
       --     command = "EslintFixAll",
       --   })
       -- end,
-      capabilities = capabilities,
     })
 
-    -- nvim_lsp.vtsls.setup({
-    --   on_attach = on_attach,
-    --   capabilities = capabilities,
-    -- })
-
-    -- nvim_lsp.denols.setup({
-    --   on_attach = on_attach,
-    --   cmd = { "deno", "lsp" },
-    --   settings = {
-    --     deno = {
-    --       enable = true,
-    --     },
-    --   },
-    --   capabilities = capabilities,
-    -- })
-
-    nvim_lsp.intelephense.setup({
-      on_attach = on_attach,
-      capabilities = capabilities,
-    })
-
-    nvim_lsp.texlab.setup({
-      on_attach = on_attach,
-      capabilities = capabilities,
-    })
-
-    nvim_lsp.nixd.setup({
-      on_attach = on_attach,
-      capabilities = capabilities,
+    -- nixd
+    vim.lsp.config("nixd", {
       cmd = { "nixd" },
+    })
+
+    -- pyright
+    -- vim.lsp.config("pyright")
+
+    -- intelephense
+    -- vim.lsp.config("intelephense", {})
+
+    -- texlab
+    -- vim.lsp.config("texlab", {})
+
+    -- enable all the servers
+    vim.lsp.enable({
+      "lua_ls",
+      "asm_lsp",
+      "clangd",
+      "sqls",
+      "pyright",
+      "gopls",
+      "tailwindcss",
+      "eslint",
+      "intelephense",
+      "texlab",
+      "nixd",
     })
   end,
 }
