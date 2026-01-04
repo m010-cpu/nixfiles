@@ -51,6 +51,10 @@
     pkgs-unstable.mpris-timer
     pkgs-unstable.bitwarden-desktop
     pkgs-unstable.discord
+    pkgs-unstable.ente-auth
+    pkgs-unstable.ivpn
+    pkgs-unstable.ivpn-service
+    pkgs-unstable.clash-verge-rev
 
     adwaita-icon-theme
     adwaita-fonts
@@ -72,6 +76,7 @@
     rnote
     parabolic
     ungoogled-chromium
+    google-chrome
     libreoffice
     jetbrains.idea-ultimate
     telegram-desktop
@@ -81,8 +86,6 @@
     qemu
     vagrant
     brave
-    ivpn
-    ente-auth
     openvpn
     transmission_4
     onlyoffice-desktopeditors

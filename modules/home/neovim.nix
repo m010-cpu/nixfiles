@@ -34,9 +34,10 @@
       rustfmt
       prettierd
       stylua
-      isort
-      black
-      pylint
+      ruff
+      # isort
+      # black
+      # pylint
       eslint_d
       sqlfluff
 
