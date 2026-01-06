@@ -89,6 +89,8 @@
     openvpn
     transmission_4
     onlyoffice-desktopeditors
+    bottles
+    devpod
 
     rofi-network-manager
     rofi-bluetooth
