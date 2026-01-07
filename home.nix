@@ -22,7 +22,7 @@
     ./modules/home/firefox.nix
     ./modules/home/neovim.nix
     ./modules/home/vscode.nix
-    ./modules/home/notion.nix
+    # ./modules/home/notion.nix
     ./modules/home/rofi.nix
     # ./modules/home/waybar.nix
     ./modules/home/zathura.nix
