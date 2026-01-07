@@ -202,6 +202,7 @@
     (callPackage ./custom/vol.nix {})
     (callPackage ./custom/gdsdecomp.nix {})
     (callPackage ./custom/ida-pro/ida-pro.nix {})
+    (callPackage ./custom/lotion.nix {})
     mitmproxy
     wabt
     mgba
