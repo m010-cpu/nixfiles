@@ -149,6 +149,7 @@
     libbpf
     cargo
     rustc
+    nodejs_24
 
     nmap
     usbutils
