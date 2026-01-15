@@ -43,8 +43,8 @@
   };
 
   home.packages = with pkgs; [
-    inputs.terra-shell.packages.${system}.default
-    inputs.zen-browser.packages.${system}.twilight-official
+    inputs.terra-shell.packages.${stdenv.hostPlatform.system}.default
+    inputs.zen-browser.packages.${stdenv.hostPlatform.system}.twilight-official
 
     pkgs-unstable.antigravity
     pkgs-unstable.code-cursor
@@ -55,6 +55,7 @@
     pkgs-unstable.ivpn
     pkgs-unstable.ivpn-service
     pkgs-unstable.clash-verge-rev
+    pkgs-unstable.opencode
 
     adwaita-icon-theme
     adwaita-fonts
@@ -78,7 +79,7 @@
     ungoogled-chromium
     google-chrome
     libreoffice
-    jetbrains.idea-ultimate
+    jetbrains.idea
     telegram-desktop
     kooha
     lmstudio
@@ -195,7 +196,7 @@
     apktool
     keepass
     hashcat
-    autopsy
+    pkgs-unstable.autopsy
     sleuthkit
     ilspycmd
     avalonia-ilspy
