@@ -198,7 +198,7 @@
     keepass
     hashcat
     pkgs-unstable.autopsy
-    sleuthkit
+    pkgs-unstable.sleuthkit
     ilspycmd
     avalonia-ilspy
     volatility3
