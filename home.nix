@@ -143,6 +143,7 @@
     clamav
     whois
     dig
+    ncdu
 
     gcc
     gdb
