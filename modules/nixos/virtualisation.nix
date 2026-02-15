@@ -5,7 +5,10 @@
 
     virtualbox.host.enable = true;
 
-    waydroid.enable = true;
+    waydroid = {
+      enable = true;
+      package = pkgs.waydroid-nftables;
+    };
 
     docker = {
       enable = true;

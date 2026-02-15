@@ -12,6 +12,7 @@
     # ./modules/home/river.nix
     ./modules/home/sway.nix
 
+    ./modules/home/swayidle.nix
     ./modules/home/swaylock.nix
     ./modules/home/zsh.nix
     ./modules/home/wezterm.nix
@@ -56,6 +57,7 @@
     pkgs-unstable.ivpn-service
     pkgs-unstable.clash-verge-rev
     pkgs-unstable.opencode
+    pkgs-unstable.tutanota-desktop
 
     adwaita-icon-theme
     adwaita-fonts
@@ -92,6 +94,7 @@
     onlyoffice-desktopeditors
     bottles
     devpod
+    eas-cli
 
     rofi-network-manager
     rofi-bluetooth
@@ -152,6 +155,7 @@
     cargo
     rustc
     nodejs_24
+    intel-undervolt
 
     nmap
     usbutils
@@ -202,13 +206,16 @@
     ilspycmd
     avalonia-ilspy
     volatility3
+    mitmproxy
+    wabt
+    mgba
+
     (callPackage ./custom/vol.nix {})
     (callPackage ./custom/gdsdecomp.nix {})
     (callPackage ./custom/ida-pro/ida-pro.nix {})
     (callPackage ./custom/lotion.nix {})
-    mitmproxy
-    wabt
-    mgba
+    (callPackage ./custom/xtool.nix {})
+    (callPackage ./custom/handy.nix {})
 
     networkmanagerapplet
     brightnessctl

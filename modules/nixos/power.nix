@@ -27,4 +27,10 @@
       # DEVICES_TO_DISABLE_ON_STARTUP = "bluetooth";
     };
   };
+
+  services.fwupd.enable = true;
+  # services.undervolt = {
+  #   enable = true;
+  #   coreOffset = -50;
+  # };
 }
