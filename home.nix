@@ -95,6 +95,7 @@
     bottles
     devpod
     eas-cli
+    figma-linux
 
     rofi-network-manager
     rofi-bluetooth
@@ -209,6 +210,7 @@
     mitmproxy
     wabt
     mgba
+    unicorn
 
     (callPackage ./custom/vol.nix {})
     (callPackage ./custom/gdsdecomp.nix {})
