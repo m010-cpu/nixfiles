@@ -28,6 +28,7 @@
       vtsls
       vscode-langservers-extracted
       intelephense
+      tinymist
 
       asmfmt
       alejandra

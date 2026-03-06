@@ -183,6 +183,15 @@ return {
     -- texlab
     -- vim.lsp.config("texlab", {})
 
+    -- typst
+    vim.lsp.config("tinymist", {
+      settings = {
+        formatterMode = "typstyle",
+        exportPdf = "onSave",
+        semanticTokens = "disable",
+      },
+    })
+
     -- enable all the servers
     vim.lsp.enable({
       "lua_ls",
@@ -196,6 +205,7 @@ return {
       "intelephense",
       "texlab",
       "nixd",
+      "tinymist",
     })
   end,
 }

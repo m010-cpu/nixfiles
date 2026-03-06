@@ -14,7 +14,7 @@
     };
 
     base16Scheme = "${pkgs.base16-schemes}/share/themes/atelier-estuary-light.yaml";
-    image = ../../wallpaper/paper.png;
+    image = ../../wallpaper/mount-paint.jpg;
     cursor.package = pkgs.bibata-cursors;
     cursor.name = "Bibata-Modern-Ice";
     cursor.size = 10;
