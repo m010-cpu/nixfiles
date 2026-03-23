@@ -29,6 +29,7 @@
     ./modules/home/zathura.nix
     ./modules/home/direnv.nix
     ./modules/home/spicetify.nix
+    ./modules/home/opencode.nix
     # ./modules/home/opensnitch.nix
     # ./modules/home/dconf.nix
   ];
@@ -55,9 +56,10 @@
     pkgs-unstable.ente-auth
     pkgs-unstable.ivpn
     pkgs-unstable.ivpn-service
-    pkgs-unstable.clash-verge-rev
-    pkgs-unstable.opencode
     pkgs-unstable.tutanota-desktop
+    pkgs-unstable.claude-code
+
+    clash-verge-rev
 
     adwaita-icon-theme
     adwaita-fonts
@@ -81,7 +83,8 @@
     ungoogled-chromium
     google-chrome
     libreoffice
-    jetbrains.idea
+    # jetbrains.idea
+    # jetbrains.clion
     telegram-desktop
     kooha
     lmstudio
@@ -155,6 +158,7 @@
     libbpf
     cargo
     rustc
+    python3
     nodejs_24
     intel-undervolt
 

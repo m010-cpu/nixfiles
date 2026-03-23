@@ -5,6 +5,8 @@
 
     virtualbox.host.enable = true;
 
+    vmware.host.enable = true;
+
     waydroid = {
       enable = true;
       package = pkgs.waydroid-nftables;

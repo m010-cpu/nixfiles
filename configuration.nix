@@ -43,7 +43,8 @@
   fonts = {
     fontDir.enable = true;
     packages = with pkgs; [
-      google-fonts
+      inter
+      nerd-fonts.space-mono
     ];
   };
 
