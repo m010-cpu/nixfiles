@@ -1,4 +1,5 @@
 {
+  pkgs,
   pkgs-unstable,
   lib,
   ...
@@ -9,7 +10,7 @@
     settings = {
       theme = lib.mkForce "system";
       plugin = [
-        "opencode-claude-auth@latest"
+        "opencode-claude-auth"
         "opencode-gemini-auth@latest"
         "opencode-mystatus"
       ];
@@ -20,6 +21,11 @@
         };
       };
       mcp = {
+        "chrome" = {
+          enabled = true;
+          type = "local";
+          command = ["npx" "-y" "chrome-devtools-mcp@latest" "--no-usage-statistics" "--isolated" "--executable-path" (lib.getExe pkgs.ungoogled-chromium)];
+        };
         "figma-desktop" = {
           enabled = true;
           type = "remote";
