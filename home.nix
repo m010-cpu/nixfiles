@@ -59,8 +59,6 @@
     pkgs-unstable.tutanota-desktop
     pkgs-unstable.claude-code
 
-    clash-verge-rev
-
     adwaita-icon-theme
     adwaita-fonts
 
@@ -68,6 +66,7 @@
     thunderbird
     insomnia
     burpsuite
+    caido
     haruna
     clapper
     celluloid
@@ -151,6 +150,7 @@
     whois
     dig
     ncdu
+    dhcpcd
 
     gcc
     gdb
@@ -158,9 +158,10 @@
     libbpf
     cargo
     rustc
+    uv
     python3
     nodejs_24
-    intel-undervolt
+    jdk21
 
     nmap
     usbutils
@@ -215,6 +216,8 @@
     wabt
     mgba
     unicorn
+    # androidenv.androidPkgs.emulator
+    # androidenv.androidPkgs.platform-tools
 
     (callPackage ./custom/vol.nix {})
     (callPackage ./custom/gdsdecomp.nix {})
@@ -222,6 +225,7 @@
     (callPackage ./custom/lotion.nix {})
     (callPackage ./custom/xtool.nix {})
     (callPackage ./custom/handy.nix {})
+    (callPackage ./custom/min-browser.nix {})
 
     networkmanagerapplet
     brightnessctl

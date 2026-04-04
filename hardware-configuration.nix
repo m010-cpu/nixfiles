@@ -64,6 +64,8 @@
     {device = "/dev/disk/by-uuid/836d0cc6-abaa-4a3d-939f-aa792835330d";}
   ];
 
+  zramSwap.enable = true;
+
   networking.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";

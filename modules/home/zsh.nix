@@ -68,7 +68,12 @@
     enableZshIntegration = true;
   };
 
-  programs.atuin = {
+  # programs.atuin = {
+  #   enable = true;
+  #   enableZshIntegration = true;
+  # };
+
+  programs.mcfly = {
     enable = true;
     enableZshIntegration = true;
   };

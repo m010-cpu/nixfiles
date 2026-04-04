@@ -26,6 +26,21 @@
           type = "local";
           command = ["npx" "-y" "chrome-devtools-mcp@latest" "--no-usage-statistics" "--isolated" "--executable-path" (lib.getExe pkgs.ungoogled-chromium)];
         };
+        "ida-pro-mcp" = {
+          enabled = true;
+          type = "local";
+          command = ["uvx" "ida-pro-mcp"];
+        };
+        "ghidra" = {
+          enabled = true;
+          type = "local";
+          command = ["python" "${../../mcp/ghidra/bridge_mcp_ghidra.py}" "--ghidra-server" "http://127.0.0.1:8080"];
+        };
+        "burp" = {
+          enabled = true;
+          type = "remote";
+          url = "http://127.0.0.1:9876";
+        };
         "figma-desktop" = {
           enabled = true;
           type = "remote";

@@ -29,11 +29,18 @@
     ./modules/home/starship.nix
     ./modules/nixos/appimage.nix
     ./modules/nixos/ios.nix
+    ./modules/nixos/clash-verge.nix
   ];
 
   # Networking
   networking.hostName = "terra";
   networking.networkmanager.enable = true;
+  # networking.extraHosts = ''
+  #   cumulus.shadow  240.126.4.125
+  #   noventis.shadow 240.126.4.240
+  #   blueprints.shadow 240.126.4.185
+  #   simplekey.shadow 240.126.4.193
+  # '';
 
   # Timezone/Language
   time.timeZone = "Europe/Monaco";
