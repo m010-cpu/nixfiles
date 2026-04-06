@@ -151,6 +151,7 @@
     dig
     ncdu
     dhcpcd
+    typst
 
     gcc
     gdb
@@ -212,6 +213,7 @@
     ilspycmd
     avalonia-ilspy
     volatility3
+    volatility2-bin
     mitmproxy
     wabt
     mgba
@@ -219,7 +221,7 @@
     # androidenv.androidPkgs.emulator
     # androidenv.androidPkgs.platform-tools
 
-    (callPackage ./custom/vol.nix {})
+    # (callPackage ./custom/vol.nix {})
     (callPackage ./custom/gdsdecomp.nix {})
     (callPackage ./custom/ida-pro/ida-pro.nix {})
     (callPackage ./custom/lotion.nix {})

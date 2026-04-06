@@ -619,11 +619,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1765140277,
-        "narHash": "sha256-NPU+gdy8N55AwGtbUSuHUa8F9cKOEtaq1UbbOSZZ4Dk=",
+        "lastModified": 1775504643,
+        "narHash": "sha256-vtcfHwG6H/kL/5fRVCiMEu40YUvEsqRaU06ePZbiBrU=",
         "owner": "m010-cpu",
         "repo": "terra-shell",
-        "rev": "17c3d02dfd990248f15996f13846cbd97187ecd7",
+        "rev": "1e2fc555583969a7bcd551fd63b4d075297b2d99",
         "type": "github"
       },
       "original": {
