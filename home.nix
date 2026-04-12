@@ -152,6 +152,7 @@
     ncdu
     dhcpcd
     typst
+    jq
 
     gcc
     gdb

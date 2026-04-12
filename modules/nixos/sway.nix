@@ -42,10 +42,11 @@
   };
 
   environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
     MOZ_ENABLE_WAYLAND = "1";
-    SDL_VIDEODRIVER = "wayland";
-    XDG_SESSION_TYPE = "wayland";
-    XDG_CURRENT_DESKTOP = "sway";
-    XDG_SESSION_DESKTOP = "sway";
+    # SDL_VIDEODRIVER = "wayland";
+    # XDG_SESSION_TYPE = "wayland";
+    # XDG_CURRENT_DESKTOP = "sway";
+    # XDG_SESSION_DESKTOP = "sway";
   };
 }

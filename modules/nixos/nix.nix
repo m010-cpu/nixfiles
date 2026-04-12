@@ -1,5 +1,8 @@
 {
   nix.settings = {
+    max-jobs = 6;
+    cores = 2;
+    builders-use-substitutes = true;
     experimental-features = [
       "nix-command"
       "flakes"
