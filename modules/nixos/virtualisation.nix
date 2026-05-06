@@ -19,6 +19,9 @@
         enable = true;
         setSocketVariable = true;
       };
+      daemon.settings = {
+        dns = ["9.9.9.9" "1.1.1.1"];
+      };
     };
   };
 

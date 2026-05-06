@@ -15,6 +15,7 @@
     ./modules/nixos/layout.nix
     ./modules/nixos/disk.nix
     ./modules/nixos/udev.nix
+    ./modules/nixos/gpg.nix
 
     ./modules/nixos/stylix.nix
 
@@ -93,8 +94,6 @@
   # programs.ssh.startAgent = true;
 
   services.nfs.server.enable = true;
-  networking.firewall.allowedTCPPorts = [2049];
-  networking.firewall.allowedUDPPorts = [2049];
 
   # Environment
   environment.sessionVariables = {
