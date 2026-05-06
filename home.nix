@@ -58,11 +58,14 @@
     pkgs-unstable.ivpn-service
     pkgs-unstable.tutanota-desktop
     pkgs-unstable.claude-code
+    pkgs-unstable.eas-cli
+    pkgs-unstable.ipsw
 
     adwaita-icon-theme
     adwaita-fonts
 
     alacritty
+    kitty
     thunderbird
     insomnia
     burpsuite
@@ -91,12 +94,12 @@
     qemu
     vagrant
     brave
+    tor-browser
     openvpn
     transmission_4
     onlyoffice-desktopeditors
     bottles
     devpod
-    eas-cli
     figma-linux
 
     rofi-network-manager
@@ -153,6 +156,10 @@
     dhcpcd
     typst
     jq
+    mkcert
+    quickemu
+    gnupg
+    pinentry-curses
 
     gcc
     gdb
@@ -229,6 +236,7 @@
     (callPackage ./custom/xtool.nix {})
     (callPackage ./custom/handy.nix {})
     (callPackage ./custom/min-browser.nix {})
+    (callPackage ./custom/helium.nix {})
 
     networkmanagerapplet
     brightnessctl

@@ -26,6 +26,49 @@
         x86_64-linux.tridactyl
       ];
 
+      search = {
+        default = "brave";
+        force = true;
+
+        engines = {
+          brave = {
+            name = "Brave Search";
+            urls = [
+              {
+                template = "https://search.brave.com/search";
+                params = [
+                  {
+                    name = "q";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
+
+            icon = "https://brave.com/static-assets/images/brave-favicon.png";
+            definedAliases = ["@br"];
+          };
+
+          startpage = {
+            name = "Startpage";
+            urls = [
+              {
+                template = "https://www.startpage.com/do/dsearch";
+                params = [
+                  {
+                    name = "query";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
+
+            icon = "https://www.startpage.com/favicon.ico";
+            definedAliases = ["@sp"];
+          };
+        };
+      };
+
       extraConfig = ''
         ${builtins.readFile ../../arkenfox/user.js}
       '';

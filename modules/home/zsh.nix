@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   programs.zsh = {
     enable = true;
 
@@ -35,19 +39,24 @@
       }
     ];
 
-    initContent = ''
-      # Completions
+    initContent = lib.mkMerge [
+      (lib.mkBefore ''
+        ZSH_AUTOSUGGEST_MANUAL_REBIND=1
+      '')
+      ''
+        # # Completions
+        zstyle ':completion:*:git-checkout:*' sort false
+        zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+        zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"
+        zstyle ':completion:*' menu no
 
-      zstyle ':completion:*:git-checkout:*' sort false
-      zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-      zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"
-      zstyle ':completion:*' menu no
-      zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --icons --color=always $realpath'
-      zstyle ':fzf-tab:complete:ls:*' fzf-preview 'eza -1 --icons --color=always $realpath'
-      zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -1 --icons --color=always $realpath'
+        zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --icons --color=always $realpath'
+        zstyle ':fzf-tab:complete:ls:*' fzf-preview 'eza -1 --icons --color=always $realpath'
+        zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -1 --icons --color=always $realpath'
 
-      cal -3
-    '';
+        cal -3
+      ''
+    ];
   };
 
   programs.eza = {
@@ -67,19 +76,4 @@
     enable = true;
     enableZshIntegration = true;
   };
-
-  # programs.atuin = {
-  #   enable = true;
-  #   enableZshIntegration = true;
-  # };
-
-  programs.mcfly = {
-    enable = true;
-    enableZshIntegration = true;
-  };
-
-  # programs.zellij = {
-  #   enable = true;
-  #   enableZshIntegration = true;
-  # };
 }

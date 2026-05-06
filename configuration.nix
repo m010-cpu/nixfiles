@@ -35,6 +35,17 @@
   # Networking
   networking.hostName = "terra";
   networking.networkmanager.enable = true;
+  # networking.networkmanager.insertNameservers = ["127.0.0.1" "9.9.9.9" "1.1.1.1"];
+  networking.networkmanager.insertNameservers = ["9.9.9.9" "1.1.1.1"];
+
+  # networking.networkmanager.dns = "systemd-resolved";
+  # services.resolved = {
+  #   enable = true;
+  #   dnssec = "allow-downgrade";
+  #   dnsovertls = "opportunistic";
+  #   fallbackDns = ["1.1.1.1" "9.9.9.9"];
+  # };
+
   # networking.extraHosts = ''
   #   cumulus.shadow  240.126.4.125
   #   noventis.shadow 240.126.4.240

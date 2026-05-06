@@ -1,5 +1,5 @@
 {
-  powerManagement.powertop.enable = true;
+  # powerManagement.powertop.enable = true;
 
   services.power-profiles-daemon.enable = false;
 
@@ -23,8 +23,8 @@
       # START_CHARGE_THRESH_BAT0 = 35;
       # STOP_CHARGE_THRESH_BAT0 = 100;
 
-      RESTORE_DEVICE_STATE_ON_STARTUP = 1;
-      # DEVICES_TO_DISABLE_ON_STARTUP = "bluetooth";
+      RESTORE_DEVICE_STATE_ON_STARTUP = 0;
+      DEVICES_TO_DISABLE_ON_STARTUP = "bluetooth";
     };
   };
 

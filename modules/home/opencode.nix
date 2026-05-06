@@ -10,7 +10,7 @@
     settings = {
       theme = lib.mkForce "system";
       plugin = [
-        "opencode-claude-auth"
+        "opencode-claude-auth@latest"
         "opencode-gemini-auth@latest"
         "opencode-mystatus"
       ];
