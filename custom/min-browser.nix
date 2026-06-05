@@ -18,7 +18,7 @@ in
       libxkbcommon
       mesa
       nss
-      xorg.libXdamage
+      libxdamage
     ];
     unpackPhase = "dpkg-deb -x $src .";
     installPhase = ''

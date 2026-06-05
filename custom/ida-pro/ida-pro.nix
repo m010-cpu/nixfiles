@@ -52,18 +52,18 @@ in
       libsecret
       openssl.out
       stdenv.cc.cc
-      xorg.libICE
-      xorg.libSM
-      xorg.libX11
-      xorg.libXau
-      xorg.libxcb
-      xorg.libXext
-      xorg.libXi
-      xorg.libXrender
-      xorg.xcbutilimage
-      xorg.xcbutilkeysyms
-      xorg.xcbutilrenderutil
-      xorg.xcbutilwm
+      libice
+      libsm
+      libx11
+      libxau
+      libxcb
+      libxext
+      libxi
+      libxrender
+      xcbutilimage
+      xcbutilkeysyms
+      xcbutilrenderutil
+      xcbutilwm
       zlib
       curl.out
       pythonForIDA

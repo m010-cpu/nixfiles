@@ -10,7 +10,7 @@
       gcc
       gnumake
       python3
-      nodejs_20
+      nodejs_24
       go
       lua5_1
 

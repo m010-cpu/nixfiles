@@ -1,12 +1,9 @@
 {pkgs, ...}: {
   services.swayidle = {
     enable = true;
-    events = [
-      {
-        event = "before-sleep";
-        command = "swaylock -fF";
-      }
-    ];
+    events = {
+      before-sleep = "swaylock -fF";
+    };
     timeouts = [
       {
         timeout = 240;

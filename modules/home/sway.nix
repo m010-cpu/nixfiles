@@ -74,8 +74,10 @@
 
         "${config.wayland.windowManager.sway.config.modifier}+Ctrl+1" = "exec pkill -USR2 -n handy";
         "${config.wayland.windowManager.sway.config.modifier}+Ctrl+2" = "exec normcap";
-        "${config.wayland.windowManager.sway.config.modifier}+Ctrl+3" = ''exec grim -g "$(slurp)" - | wl-copy --type image/png'';
-        "${config.wayland.windowManager.sway.config.modifier}+Ctrl+4" = ''exec bash -c 'f=~/Pictures/ss_$(date +%F_%T | tr : -).png; grim -g "$(slurp)" "$f" && wl-copy --type image/png < "$f"' '';
+        # "${config.wayland.windowManager.sway.config.modifier}+Ctrl+3" = ''exec grim -g "$(slurp)" - | wl-copy --type image/png'';
+        "${config.wayland.windowManager.sway.config.modifier}+Ctrl+3" = ''exec sh -c 'o=$(swaymsg -t get_outputs | jq -r ".[] | select(.focused) | .name"); s=$(swaymsg -t get_outputs | jq -r ".[] | select(.focused) | .scale"); grim -o "$o" -s "$s" - | wl-copy --type image/png' '';
+        "${config.wayland.windowManager.sway.config.modifier}+Ctrl+4" = ''exec sh -c 'f=~/Pictures/ss_$(date +%F_%T | tr : -).png; grim -g "$(slurp)" "$f" && wl-copy --type image/png < "$f"' '';
+        "${config.wayland.windowManager.sway.config.modifier}+Ctrl+8" = ''exec /tmp/shothook.py'';
 
         "${config.wayland.windowManager.sway.config.modifier}+Control+Left" = "workspace prev";
         "${config.wayland.windowManager.sway.config.modifier}+Control+Right" = "workspace next";

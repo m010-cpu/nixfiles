@@ -54,6 +54,14 @@
   #   simplekey.shadow 240.126.4.193
   # '';
 
+  # networking.networkmanager.dns = "systemd-resolved";
+  # services.resolved = {
+  #   enable = true;
+  #   dnssec = "allow-downgrade";
+  #   dnsovertls = "opportunistic";
+  #   fallbackDns = ["1.1.1.1" "9.9.9.9"];
+  # };
+
   # Timezone/Language
   time.timeZone = "Europe/Monaco";
 
@@ -107,5 +115,5 @@
 
   services.flatpak.enable = true;
 
-  system.stateVersion = "25.11";
+  system.stateVersion = "26.05";
 }

@@ -51,7 +51,7 @@
     pkgs-unstable.antigravity
     pkgs-unstable.code-cursor
     pkgs-unstable.mpris-timer
-    pkgs-unstable.bitwarden-desktop
+    # pkgs-unstable.bitwarden-desktop
     pkgs-unstable.discord
     pkgs-unstable.ente-auth
     pkgs-unstable.ivpn
@@ -60,6 +60,10 @@
     pkgs-unstable.claude-code
     pkgs-unstable.eas-cli
     pkgs-unstable.ipsw
+    pkgs-unstable.idescriptor
+    pkgs-unstable.rclone
+    pkgs-unstable.rclone-ui
+    android-studio
 
     adwaita-icon-theme
     adwaita-fonts
@@ -69,7 +73,7 @@
     thunderbird
     insomnia
     burpsuite
-    caido
+    caido-desktop
     haruna
     clapper
     celluloid
@@ -101,6 +105,7 @@
     bottles
     devpod
     figma-linux
+    remmina
 
     rofi-network-manager
     rofi-bluetooth
@@ -118,9 +123,10 @@
     sushi
     nautilus
     seahorse
+    snapshot
 
-    xfce.ristretto
-    xfce.tumbler
+    ristretto
+    tumbler
 
     rhythmbox
     libgpod
@@ -220,8 +226,8 @@
     pkgs-unstable.sleuthkit
     ilspycmd
     avalonia-ilspy
-    volatility3
-    volatility2-bin
+    # volatility3
+    # volatility2-bin
     mitmproxy
     wabt
     mgba
@@ -243,6 +249,6 @@
     playerctl
   ];
 
-  home.stateVersion = "25.11";
+  home.stateVersion = "26.05";
   programs.home-manager.enable = true;
 }

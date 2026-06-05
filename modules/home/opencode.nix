@@ -7,8 +7,10 @@
   programs.opencode = {
     enable = true;
     package = pkgs-unstable.opencode;
-    settings = {
+    tui = {
       theme = lib.mkForce "system";
+    };
+    settings = {
       plugin = [
         "opencode-claude-auth@latest"
         "opencode-gemini-auth@latest"
