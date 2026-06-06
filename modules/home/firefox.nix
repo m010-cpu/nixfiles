@@ -3,7 +3,6 @@
   inputs,
   ...
 }: {
-  imports = [inputs.arkenfox.hmModules.default];
   programs.firefox = {
     enable = true;
     package = pkgs.firefox;

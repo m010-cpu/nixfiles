@@ -30,11 +30,14 @@
   boot.kernelParams = [
     "quiet"
     "splash"
+    "loglevel=3"
+    "rd.udev.log_level=3"
+    "systemd.show_status=auto"
+    "nowatchdog"
+    "nmi_watchdog=0"
     "slab_nomerge"
     "page_poison=1"
     "page_alloc.shuffle=1"
-    # "rfkill.master_switch_mode=1"
-    # "rfkill.default_state=0"
   ];
   boot.extraModulePackages = [];
 
