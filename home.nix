@@ -51,7 +51,7 @@
     pkgs-unstable.antigravity
     pkgs-unstable.code-cursor
     pkgs-unstable.mpris-timer
-    # pkgs-unstable.bitwarden-desktop
+    pkgs-unstable.bitwarden-desktop
     pkgs-unstable.discord
     pkgs-unstable.ente-auth
     pkgs-unstable.ivpn
@@ -235,7 +235,7 @@
     # androidenv.androidPkgs.emulator
     # androidenv.androidPkgs.platform-tools
 
-    # (callPackage ./custom/vol.nix {})
+    (callPackage ./custom/vol.nix {})
     (callPackage ./custom/gdsdecomp.nix {})
     (callPackage ./custom/ida-pro/ida-pro.nix {})
     (callPackage ./custom/lotion.nix {})

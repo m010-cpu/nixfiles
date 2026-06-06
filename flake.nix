@@ -53,6 +53,9 @@
       allowUnfree = true;
       permittedInsecurePackages = [
         "python-2.7.18.12"
+        "python2.7-pip-20.3.4"
+        "python2.7-setuptools-44.0.0"
+        "electron-39.8.10"
       ];
     };
   in {
@@ -87,8 +90,8 @@
             home-manager.extraSpecialArgs = {
               inherit inputs;
               pkgs-unstable = import nixpkgs-unstable {
-                system = "x86_64-linux";
-                config.allowUnfree = true;
+                inherit system;
+                config = nixpkgsConfig;
               };
             };
           }
